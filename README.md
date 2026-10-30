@@ -73,9 +73,8 @@
 | 单位与标准缩写 | `60mV` `6V` `AUTO+` `DC/AC/AC+DC` `Vpp` | 本身就是符号 |
 | 少量值 | `Irms 100 ms` `Peak` `Duty` `No data` `Power meter: wiring` `Fast` | 见下方「闪存预算」，为放下其余译文而回退 |
 | 帮助页正文 | 1 页、只剩 4 行英文 | 见下 |
-| **所有弹出提示（toast）** | «Fixed rate in this function» «Recording CSV» «Touch calibration saved» 等约 24 条 | toast 走 `ASCII26`（26 px **4 bpp**），约 110 字节/字；全部汉化要 ~11 KB |
-| 对话框标题与按钮 | «Power meter: wiring» «Cancel» «OK» «Fuse check» 弹窗 | 同上，`ASCII26` |
-| 功率计部分按钮 | «At load» «Wiring» «Reset Wh» | TEXT22 可汉化，但 B 区只剩 4 字节 |
+| **部分弹窗正文** | «Lead from V/ohm jack to A» «nothing else connected» 等长句 | 弹窗已改用 TEXT22，可汉化；长句每句要 10 个以上汉字，B 区放不下 |
+| 功率计部分按钮 | «At load» «Wiring» «Reset Wh» | TEXT22 可汉化，等下一步 |
 
 **帮助页从 7 页减为 1 页、且只留 4 行**（「手势」的前 4 条，三指截图、两指关机这类
 文档里查不到的操作），为字形腾出约 1.2 KB 闪存。
@@ -158,6 +157,18 @@ python tools/upload_zh.py firmware/dm40_v_2_6-stock.bin --update --wait 120
 > 里面的 `CALIB.BIN`、`BOOTDATA.BIN`、`UID.BIN` 是这台表独有、**无法重建**的。
 
 ---
+
+### 弹窗与提示改用 TEXT22
+
+原版所有 toast 和对话框走 ASCII26（26 px **4 bpp**），一个汉字约 150 字节。
+本项目把它整块换成 TEXT22（22 px 1 bpp）：
+
+- 汉字成本从 150 降到 **64 字节**
+- ASCII26 的 6,279 字节位图从 region A2 释放，960 字节条目从 B 释放
+- 代价：弹窗文字**小一号**（26 px -> 22 px）
+
+腾出的空间用来汉化：对话框按钮 **是 / 否 / 取消 / 开始 / 再次**、
+标题 **保险丝自检**、以及高频提示 **正在记录 / 无数值可记录 / 请先停止记录**。
 
 ## 目录
 

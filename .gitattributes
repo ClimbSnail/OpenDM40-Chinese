@@ -1,0 +1,6 @@
+# 脚本与文本一律用 LF，避免在 Windows 上检出后把 .sh / .py 改成 CRLF
+* text=auto eol=lf
+*.sh text eol=lf
+*.py text eol=lf
+*.bin binary
+*.png binary

@@ -148,10 +148,19 @@ def main():
     keep_txt = io.open(opt("--txt22-keep"), encoding="utf-8").read().strip()
     draw_txt = io.open(opt("--txt22-draw"), encoding="utf-8").read().strip()
     f14_chars = opt("--f14", "")
+    ascii_keep_file = opt("--ascii-keep")
+    keep_ascii = None
+    if ascii_keep_file:
+        keep_ascii = set(io.open(ascii_keep_file, encoding="utf-8").read())
 
     # ---------------- TEXT22: cell 22, ink top row 1, yoff 0 ----------
     text = pristine
     g = load_font(text, "TEXT22")
+    if keep_ascii is not None:
+        before = len(g)
+        g = [x for x in g if x[0] >= 0x80 or chr(x[0]) in keep_ascii]
+        sys.stderr.write("TEXT22: Latin glyphs %d -> %d (dropped %d)\n"
+                         % (before - sum(1 for x in g if x[0] >= 0x80), 0, 0))
     src = {x[0]: x for x in load_font(cjksrc, "TEXT22")}
     have = set(x[0] for x in g)
     for ch in keep_txt:

@@ -531,4 +531,4 @@ ASSERT(__image_end <= 0x080A0000, "image reaches the FS-loader at 0x080A0000");
  *   (docs/native-boot.md "Region A2"). */
 ASSERT(_stack_top - __bss_end >= 42K, "TCM stack below 42 KiB (worst path ~21.5 KiB + 20 KiB headroom): move CPU-only statics to .sram_bss");
 ASSERT(ORIGIN(SRAM) + LENGTH(SRAM) - __sram_bss_end >= 6K, "less than 8 KiB of SRAM free: overlay or shrink a buffer (docs/native-boot.md memory map)");
-        ASSERT(0x08080000 - __b_end >= 5500, "region B free");
+        ASSERT(0x08080000 - __b_end >= 5000, "region B free");

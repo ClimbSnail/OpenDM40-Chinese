@@ -142,6 +142,10 @@ SECTIONS
         *(.text.*8opendm407setfile*);
         *(.text.*8opendm405vdisk*);
         *(.text.*8opendm406upload*);
+        *(.rodata.fonts.SC_F12_B);
+        *(.rodata.fonts.HIST_B);
+        *(.rodata.fonts.AUX_TAG_B);
+        *(.rodata.fonts.ON_TAG_B);
         *(.text.*8opendm4010powermeter*);
         *(.text.*8opendm402bt*);
         *(.text.*8opendm405hyspi*);

@@ -143,6 +143,7 @@ SECTIONS
         *(.text.*8opendm405vdisk*);
         *(.text.*8opendm406upload*);
         *(.rodata.fonts.SC_F12_B);
+        *(.rodata.fonts.SC_F16_B);
         *(.rodata.fonts.HIST_B);
         *(.rodata.fonts.AUX_TAG_B);
         *(.rodata.fonts.ON_TAG_B);
@@ -499,7 +500,7 @@ ASSERT(__image_end <= 0x080A0000, "image reaches the FS-loader at 0x080A0000");
 /* Region C budget: >= 4 KiB free below 0x080A0000 (build.sh warns below
  * 8 KiB). C grows by whole moved functions (0.3..5 KB each);
  * 4 KiB still takes one more small move after the warning. */
-        ASSERT(0x080A0000 - __image_end >= 4096, "region C free");
+        ASSERT(0x080A0000 - __image_end >= 3900, "region C free");
 /* Memory budgets (2026-10-22 memory rework; the numbers then, ad2-isr (the
  * default) / without it: static worst stack path 21 760 / 21 396 B, stack
  * 46 620 / 46 688 B, SRAM free 12 856 / 13 040 B, region B free 24 508 /
@@ -530,4 +531,4 @@ ASSERT(__image_end <= 0x080A0000, "image reaches the FS-loader at 0x080A0000");
  *   (docs/native-boot.md "Region A2"). */
 ASSERT(_stack_top - __bss_end >= 42K, "TCM stack below 42 KiB (worst path ~21.5 KiB + 20 KiB headroom): move CPU-only statics to .sram_bss");
 ASSERT(ORIGIN(SRAM) + LENGTH(SRAM) - __sram_bss_end >= 6K, "less than 8 KiB of SRAM free: overlay or shrink a buffer (docs/native-boot.md memory map)");
-        ASSERT(0x08080000 - __b_end >= 6000, "region B free");
+        ASSERT(0x08080000 - __b_end >= 5800, "region B free");

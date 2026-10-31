@@ -54,12 +54,27 @@ def render(ch, size, cell_h, adv, top):
         sys.exit("%s: ink %d rows does not fit %d (top %d)" % (ch, ink_h, cell_h, top))
     if ink_w > adv:
         sys.exit("%s: ink %d px wide, advance is %d" % (ch, ink_w, adv))
+    # Align by the baseline, not by the top. The vendor's hanzi end on row 20
+    # of the 22-row cell (84 of 94 of them); top-aligning instead leaves the
+    # shorter characters -- 上 for one -- floating 2 px above their neighbours.
+    baseline_src = canvas - 8
+    below = baseline_src - r1
+    if ink_h >= 18:
+        # Full-height characters: pin the ink bottom to row 20, which is where
+        # 84 of the vendor's 94 hanzi end. Baseline-relative placement leaves
+        # 上 two rows high because its bottom stroke does not overshoot.
+        dst_bottom = 20
+    else:
+        dst_bottom = 19 - below   # 一 / 二 / 三 and friends keep their offset
+    dst_top = dst_bottom - ink_h + 1
+    if dst_top < 0:
+        dst_top = 0
     out = [0] * (adv * cell_h)
     xo = max(0, (adv - ink_w) // 2)
     for y in range(ink_h):
         for x in range(ink_w):
             if px[c0 + x, r0 + y] >= 110:
-                out[(xo + x) * cell_h + (top + y)] = 15
+                out[(xo + x) * cell_h + (dst_top + y)] = 15
     return out, ink_h
 
 

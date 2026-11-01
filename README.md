@@ -115,6 +115,37 @@ CRC-32 `7ece9514`，SHA-256 `34a03183…cb858`
 | `firmware/历史/opendm40-v0.3.0-zh-跨页测试版.bin` | 早期实验版 | ❌ **功能已被正式版覆盖，别刷** |
 | `firmware/link-native.x` | 链接脚本，不是固件 | ❌ 不能刷 |
 
+### 前提：U 盘挂得出来吗？
+
+这个 2 GB 的 U 盘**不是真 SD 卡**，是 opendm40 自己模拟的（体积 4160541 扇区 ≈ 1.98 GiB，
+FAT16，卷标 DM40）。所以有几个前提：
+
+| # | 前提 | 说明 |
+|---|---|---|
+| 1 | **表在正常运行**（不是加载器/恢复模式） | 虚拟盘由 opendm40 提供，加载器里没有 |
+| 2 | **用能传数据的 USB 线** | 设备管理器里要能看到 DM40 multimeter (opendm40) **和** USB 大容量存储设备 |
+| 3 | **设置第 19 行「U盘」= 可写** | 只有「可写 / 只读」两个值。只读**能挂载但拷不进去**，刷不了 |
+| 4 | **改完只读/可写要重插 USB** | 那一行会显示「可写 (重插)」「只读 (重插)」——括号就是提醒你拔插 |
+| 5 | **不要在记录/图库读写时刷** | 磁盘忙时主机侧拿不到盘（固件里是 E_BUSY，界面提示「磁盘忙」）；必要时发 DBG:VDISK:EJECT 让主机先释放 |
+| 6 | **Windows 不会自动发现新盘** | 实测：设备已就位、VID_1209 三个接口都在，但资源管理器没有盘符 → Update-HostStorageCache 之后 E: DM40 才出现 |
+
+插上后按这个顺序自查：
+
+```powershell
+# 1. 设备在不在（正常应为 3 个接口）
+(Get-PnpDevice -PresentOnly | Where-Object { $_.InstanceId -match 'VID_1209' }).Count
+
+# 2. 盘在不在（卷标 DM40，约 2 GB）
+Get-Volume | Where-Object FileSystemLabel -eq 'DM40' | Select-Object DriveLetter, SizeRemaining
+
+# 3. 看不到盘就刷新一次
+Update-HostStorageCache
+```
+
+> **U 盘和 SCPI 是两条独立通道**（接口 0 = 仪器，接口 1 = 存储），可以同时存在；
+> 但刷机过程中不要两边同时操作——主机锁盘时表上的画面不会刷新。
+> 嫌麻烦就用下面的 **SCPI 直传**，它不经过 U 盘挂载，完全没有 5、6 两个问题。
+
 ### 步骤
 
 1. **USB 线连电脑**，表会挂成一个 U 盘（卷标 `DM40`，约 2 GB）

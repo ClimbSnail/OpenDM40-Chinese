@@ -12,6 +12,10 @@
 
 ## 要刷的文件
 
+> **直接下载（推荐）**：[Releases · v0.3.0-zh1](
+> https://github.com/xingyan4117-sketch/OpenDM40-Chinese/releases/latest)
+> —— 附件里就是 `opendm40-v0.3.0-zh.bin` 和 `SHA256SUMS.txt`
+
 **`firmware/opendm40-v0.3.0-zh.bin`** —— 635,520 字节，
 CRC-32 `7ece9514`，SHA-256 `34a03183…cb858`
 

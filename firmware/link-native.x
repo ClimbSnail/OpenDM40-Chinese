@@ -97,8 +97,8 @@ SECTIONS
          * zero-wait like B, and B needed the room for Chinese glyphs. */
         /* zh patch: the rest of the room ASCII26 gave back. All of these are
          * redrawn only when a screen changes, and A2 is as fast as B. */
-        *(.rodata.fonts.K_FONT_B);
         *(.rodata.fonts.ICONS_B);
+        *(.rodata.fonts.K_FONT_B);
         *(.rodata.fonts.BTN_GLYPH_B);
         *(.rodata.fonts.BATTERY_B);
         *(.rodata.fonts.LIGHTNING_B);

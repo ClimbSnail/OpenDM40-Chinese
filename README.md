@@ -84,11 +84,43 @@
 
 ---
 
-## 刷机教程
+## 刷机（推荐：直接复制文件）
 
-> ⚠️ **实测结论**：在 v0.3.0 上，
-> ①「把升级文件拷进 U 盘等表弹窗」和 ②「关机时长按电源键进加载器」
-> **这两条官方途径都不工作**。只能用 USB SCPI。
+**这是最省事的方式，2026-11-01 实机验证通过。**
+
+1. **USB 线连电脑**，表会挂成一个 U 盘（卷标 `DM40`，约 2 GB）
+2. **把镜像复制到 U 盘根目录**，文件名随便，但**必须是 `DM40*.BIN`**
+   （例如 `DM40FW.BIN`；叫 `firmware.bin` 就不会被识别）
+3. **安全弹出 / 卸载该卷**（让电脑把缓存写完）
+   ```powershell
+   Copy-Item opendm40-v0.3.0-zh.bin E:\DM40FW.BIN
+   Write-VolumeCache -DriveLetter E
+   mountvol E: /P
+   ```
+4. 表上弹出确认框：
+
+   ```
+   ┌──────────────────────┐
+   │      固件已接收       │
+   │      现在安装         │
+   │   [ 否 ]    [ 是 ]   │  ← 红色「是」
+   └──────────────────────┘
+   ```
+
+5. **点「是」** → 安装 → 自动重启（约 20~25 秒后重新枚举 USB）
+
+不点或 60 秒超时 = 自动「否」，镜像文件被删掉，**原固件不受影响**。
+
+**容错**：文件损坏 / 长度不对 / 中断都会在校验阶段被拒，弹「不是 DM40 升级文件」，
+不会变砖。提交前断电只会在空闲簇里留下未链接的数据。
+
+> 这条路径的代码在 `src/vwrite.rs`（U 盘根目录出现 `DM40*.BIN` → 校验 → 链接成
+> `DM40FW.BIN` → 弹「固件已接收」）。早期 README 写过"这条路不工作"，那是错的，
+> 2026-11-01 实测走通并把截图存进了 `screenshots/`。
+
+## 刷机（备用：USB SCPI 脚本）
+
+需要 Python 环境和 WinUSB 驱动，好处是有 **CRC-32 端到端校验**、不用在表上点确认。
 
 ### 1. 准备 USB 驱动
 
@@ -109,8 +141,6 @@ pip install pyvisa pyvisa-py pyusb libusb-package
 
 ### 3. 刷入
 
-表通过 USB 连上电脑，运行：
-
 ```bash
 python tools/upload_zh.py firmware/opendm40-v0.3.0-zh.bin --update --wait 120
 ```
@@ -121,9 +151,6 @@ python tools/upload_zh.py firmware/opendm40-v0.3.0-zh.bin --update --wait 120
 2. 分块 `DBG:UPLOAD:DATA <offset>,<232 字节>` 传 634 KB，约 9 秒
 3. `DBG:UPLOAD:END?` —— **表自己重新读取文件并校验 CRC-32**
 4. `DBG:UPDATE` —— 清零加载器标记并复位，原厂加载器安装固件
-
-设备会掉出 USB 约 1 秒，随后出现即为新固件。
-
 ### 4. 验证
 
 ```bash

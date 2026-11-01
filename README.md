@@ -10,6 +10,14 @@
 
 ---
 
+## 要刷的文件
+
+**`firmware/opendm40-v0.3.0-zh.bin`** —— 635,520 字节，
+CRC-32 `7ece9514`，SHA-256 `34a03183…cb858`
+
+其余三个镜像**不要刷**（原版英文、原厂备份、历史实验版），
+详见 [刷机](#刷机推荐直接复制文件) 一节。
+
 ## 效果
 
 | 主菜单 | 设置（单页 25 项，每屏 6 行） |
@@ -92,12 +100,31 @@
 
 **这是最省事的方式，2026-11-01 实机验证通过。**
 
+### 刷哪一个文件？
+
+> ## 就刷：`firmware/opendm40-v0.3.0-zh.bin`
+> **635,520 字节**，CRC-32 `7ece9514`，SHA-256 开头 `34a03183`
+
+仓库里一共 4 个镜像，**其余三个都不要刷**：
+
+| 文件 | 是什么 | 刷吗 |
+|---|---|---|
+| **`firmware/opendm40-v0.3.0-zh.bin`** | **汉化版（本项目的成品）** | ✅ **刷这个** |
+| `firmware/opendm40-v0.3.0-official.bin` | 上游 opendm40 原版，**英文界面** | ❌ 只有想回退英文版才用 |
+| `firmware/dm40_v_2_6-stock.bin` | **原厂 V2.6** 固件备份 | ❌ 只有想刷回出厂才用 |
+| `firmware/历史/opendm40-v0.3.0-zh-跨页测试版.bin` | 早期实验版 | ❌ **功能已被正式版覆盖，别刷** |
+| `firmware/link-native.x` | 链接脚本，不是固件 | ❌ 不能刷 |
+
+### 步骤
+
 1. **USB 线连电脑**，表会挂成一个 U 盘（卷标 `DM40`，约 2 GB）
-2. **把镜像复制到 U 盘根目录**，文件名随便，但**必须是 `DM40*.BIN`**
-   （例如 `DM40FW.BIN`；叫 `firmware.bin` 就不会被识别）
+2. **把 `firmware/opendm40-v0.3.0-zh.bin` 复制到 U 盘根目录**，
+   文件名随便，但**必须是 `DM40*.BIN`**
+   （例如存成 `DM40FW.BIN`；叫 `firmware.bin` 就不会被识别）
 3. **安全弹出 / 卸载该卷**（让电脑把缓存写完）
    ```powershell
-   Copy-Item opendm40-v0.3.0-zh.bin E:\DM40FW.BIN
+   # 假设表是 E: 盘
+   Copy-Item firmware\opendm40-v0.3.0-zh.bin E:\DM40FW.BIN
    Write-VolumeCache -DriveLetter E
    mountvol E: /P
    ```

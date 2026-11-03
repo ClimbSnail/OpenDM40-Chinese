@@ -21,7 +21,7 @@
 
 ## 要刷的文件
 
-> **直接下载（推荐）**：[Releases · v0.3.0-zh2](
+> **直接下载（推荐）**：[Releases · v0.3.0-zh3](
 > https://github.com/xingyan4117-sketch/OpenDM40-Chinese/releases/latest)
 > —— 附件里就是 `opendm40-v0.3.0-zh.bin` 和 `SHA256SUMS.txt`
 
@@ -30,6 +30,19 @@ CRC-32 `8e531b0e`，SHA-256 `42a07e03…ddd6`
 
 校验：`sha256sum -c SHA256SUMS.txt`（Windows 用 `Get-FileHash` 逐个比对），
 完整清单见仓库根的 `SHA256SUMS.txt`。
+
+### 版本对照
+
+**认准 CRC-32**：同一个文件名在不同版本里内容不同，光看名字分不出。
+
+| 版本 | CRC-32 | 内容 |
+|---|---|---|
+| zh1 | `7ece9514` | 第一版：设置单页、图库多选、示波器全中文 |
+| zh2 | `c2bd20c4` / `8e531b0e` | **附件发布后被覆盖过两次，别用** |
+| **zh3** | `8e531b0e` | **当前版本**，与仓库 `firmware/opendm40-v0.3.0-zh.bin` 一致 |
+
+> 从 zh3 起，**发布过的附件不再覆盖**；有新改动就发新 tag。
+
 
 其余三个镜像**不要刷**（原版英文、原厂备份、历史实验版），
 详见 [刷机](#刷机推荐直接复制文件) 一节。

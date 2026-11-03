@@ -26,7 +26,7 @@
 > —— 附件里就是 `opendm40-v0.3.0-zh.bin` 和 `SHA256SUMS.txt`
 
 **`firmware/opendm40-v0.3.0-zh.bin`** —— 635520 字节，
-CRC-32 `d937ea53`，SHA-256 `18235aeb…8616`
+CRC-32 `712b9387`，SHA-256 `1188f9f5…f15e`
 
 校验：`sha256sum -c SHA256SUMS.txt`（Windows 用 `Get-FileHash` 逐个比对），
 完整清单见仓库根的 `SHA256SUMS.txt`。
@@ -135,7 +135,7 @@ CRC-32 `d937ea53`，SHA-256 `18235aeb…8616`
 ### 刷哪一个文件？
 
 > ## 就刷：`firmware/opendm40-v0.3.0-zh.bin`
-> **635520 字节**，CRC-32 `d937ea53`，SHA-256 开头 `34a03183`
+> **635520 字节**，CRC-32 `712b9387`，SHA-256 开头 `34a03183`
 
 仓库里一共 4 个镜像，**其余三个都不要刷**：
 

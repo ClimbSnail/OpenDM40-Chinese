@@ -21,12 +21,12 @@
 
 ## 要刷的文件
 
-> **直接下载（推荐）**：[Releases · v0.3.0-zh4](
+> **直接下载（推荐）**：[Releases · v0.3.0-zh5](
 > https://github.com/xingyan4117-sketch/OpenDM40-Chinese/releases/latest)
 > —— 附件里就是 `opendm40-v0.3.0-zh.bin` 和 `SHA256SUMS.txt`
 
 **`firmware/opendm40-v0.3.0-zh.bin`** —— 635520 字节，
-CRC-32 `140b5dc1`，SHA-256 `324a3acf…61ce`
+CRC-32 `04d4ccb3`，SHA-256 `4572b0ab…fe54`
 
 校验：`sha256sum -c SHA256SUMS.txt`（Windows 用 `Get-FileHash` 逐个比对），
 完整清单见仓库根的 `SHA256SUMS.txt`。
@@ -40,7 +40,8 @@ CRC-32 `140b5dc1`，SHA-256 `324a3acf…61ce`
 | zh1 | `7ece9514` | 第一版：设置单页、图库多选、示波器全中文 |
 | zh2 | `c2bd20c4` / `8e531b0e` | **附件发布后被覆盖过两次，别用** |
 | zh3 | `8e531b0e` | 充电指示判定错误的版本 |
-| **zh4** | `140b5dc1` | **当前版本**，与仓库 `firmware/opendm40-v0.3.0-zh.bin` 一致 |
+| zh4 | `140b5dc1` | 充电能变绿了，但整块都绿 |
+| **zh5** | `04d4ccb3` | **当前版本**：外框白、格子绿、最上一格闪 |
 
 > 从 zh3 起，**发布过的附件不再覆盖**；有新改动就发新 tag。
 
@@ -149,7 +150,7 @@ CRC-32 `140b5dc1`，SHA-256 `324a3acf…61ce`
 ### 刷哪一个文件？
 
 > ## 就刷：`firmware/opendm40-v0.3.0-zh.bin`
-> **635520 字节**，CRC-32 `140b5dc1`，SHA-256 开头 `34a03183`
+> **635520 字节**，CRC-32 `04d4ccb3`，SHA-256 开头 `34a03183`
 
 仓库里一共 4 个镜像，**其余三个都不要刷**：
 

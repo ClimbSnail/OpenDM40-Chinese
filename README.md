@@ -147,14 +147,16 @@ CRC-32 `a63e3322`，SHA-256 `1d7892d4…ca63`
 
 | 位置 | 内容 | 原因 |
 |---|---|---|
-| 测量页小标签 | MAX AVG MIN REL 320ms/div MED 5.0/s | 该处用 F14 字体（14 px / 1 bpp），行距仅 12 px。中文在 14 px 放不下，降到 11 px 后笔画糊成一团（见 screenshots/时间基准-11px失败样例.png） |
-| 状态栏 | AUTO+ RUN HOLD | 该处用 F21 字体（21 px **4 bpp**），约 110 字节/字，且属通用符号 |
-| 示波器正文 | Freq +Duty Cycl FFT 10dB …（**Clear/Default 已改中文：清除/默认**）| 这些走 SC_F12 / SC_F16 / SC_F20（12/16/20 px），汉字在 12–16 px 必糊；仅 20 px 面板按钮理论上可做，需另建一套字形表 |
-| 信号源的 logic level | Vpp / 偏移 框右上角的小注 | 走 F14（14 px、行距 12 px），与 MAX/AVG/MIN 同源限制 |
+| 示波器底部测量行 | Freq / Up-p / Cyc1 / Urms | 12 px 小字（`SC_F12`），汉字放不下；该行只是四个读数的简写 |
+| 状态栏 | AUTO+ RUN HOLD STOP | `F21` 字体只有数字与部分字母，且属通用符号 |
+| 图库文件数 / 页码 | 9 files / Page 1 of 2 | 12 px 小字 |
+| 功率设置页脚注 | V gain … factory | 12 px 小字 |
+| 信号源的 logic level | Vpp / 偏移 框右上角小注 | `F14`（14 px、行距 12 px），汉字放不下 |
+| 通用符号 | DC/AC/AC+DC、UART/8N1/DALI、FFT/ABS、dB/div、Vpp、CH1 | 行业符号与协议名，保留原文更易对照 |
 | 单位与标准缩写 | 60mV 6V AUTO+ DC/AC/AC+DC Vpp PT100 | 本身就是符号与传感器型号 |
 | 少量值 | Irms 100 ms Peak Duty No data Fast Reset Wh 之外 | 为放下其余译文而回退 |
 
-**帮助页已完全移除**（设置 2/3 里的那一行也去掉了）。
+**帮助页保留**（设置里的「帮助」一行进入，含手势与按键说明；早期版本曾移除，现已恢复了）。
 它原本是 7 页英文速查，汉化过程中逐步减到 1 页 4 行，最后整页删除——
 内容在 docs/opendm40-中文使用说明书.md 里更完整。
 

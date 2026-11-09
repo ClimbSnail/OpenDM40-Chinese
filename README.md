@@ -1,7 +1,7 @@
 # OpenDM40-Chinese
 
 [opendm40](https://github.com/opendm40/opendm40) 开源万用表固件的**简体中文汉化**，
-面向正点原子 **DM40A / DM40B / DM40C**，基于 **v0.3.0** 源码。
+面向正点原子 **DM40A / DM40B / DM40C**，基于 **v0.4.0** 源码。
 
 已在 **DM40A 真机**上测试通过。
 
@@ -40,10 +40,10 @@
 
 > **直接下载（推荐）**：[Releases · v0.4.0-zh9](
 > https://github.com/xingyan4117-sketch/OpenDM40-Chinese/releases/latest)
-> —— 附件里就是 `opendm40-v0.3.0-zh.bin` 和 `SHA256SUMS.txt`
+> —— 附件里就是 `opendm40-v0.4.0-zh.bin` 和 `SHA256SUMS.txt`
 
-**`firmware/opendm40-v0.3.0-zh.bin`** —— 635520 字节，
-CRC-32 `6803c2d3`，SHA-256 `1d8d067f…a9c1`
+**`firmware/opendm40-v0.4.0-zh.bin`** —— 632576 字节，
+CRC-32 `12200498`，SHA-256 `1ca7059b…d65f`
 
 校验：`sha256sum -c SHA256SUMS.txt`（Windows 用 `Get-FileHash` 逐个比对），
 完整清单见仓库根的 `SHA256SUMS.txt`。
@@ -72,7 +72,7 @@ CRC-32 `6803c2d3`，SHA-256 `1d8d067f…a9c1`
 
 ## 效果
 
-| 主菜单 | 设置（单页 25 项，每屏 6 行） |
+| 主菜单 | 设置（单页 24 项，每屏 6 行） |
 |---|---|
 | ![主菜单](screenshots/主菜单.png) | ![设置](screenshots/设置-六行铺满.png) |
 
@@ -170,15 +170,15 @@ CRC-32 `6803c2d3`，SHA-256 `1d8d067f…a9c1`
 
 ### 刷哪一个文件？
 
-> ## 就刷：`firmware/opendm40-v0.3.0-zh.bin`
-> **635520 字节**，CRC-32 `6803c2d3`，SHA-256 开头 `34a03183`
+> ## 就刷：`firmware/opendm40-v0.4.0-zh.bin`
+> **632576 字节**，CRC-32 `12200498`，SHA-256 开头 `34a03183`
 
 仓库里一共 4 个镜像，**其余三个都不要刷**：
 
 | 文件 | 是什么 | 刷吗 |
 |---|---|---|
-| **`firmware/opendm40-v0.3.0-zh.bin`** | **汉化版（本项目的成品）** | ✅ **刷这个** |
-| `firmware/opendm40-v0.3.0-official.bin` | 上游 opendm40 原版，**英文界面** | ❌ 只有想回退英文版才用 |
+| **`firmware/opendm40-v0.4.0-zh.bin`** | **汉化版（本项目的成品）** | ✅ **刷这个** |
+| `firmware/opendm40-v0.4.0-official.bin` | 上游 opendm40 原版，**英文界面** | ❌ 只有想回退英文版才用 |
 | `firmware/dm40_v_2_6-stock.bin` | **原厂 V2.6** 固件备份 | ❌ 只有想刷回出厂才用 |
 | `firmware/link-native.x` | 链接脚本，不是固件 | ❌ 不能刷 |
 
@@ -216,13 +216,13 @@ Update-HostStorageCache
 ### 步骤
 
 1. **USB 线连电脑**，表会挂成一个 U 盘（卷标 `DM40`，约 2 GB）
-2. **把 `firmware/opendm40-v0.3.0-zh.bin` 复制到 U 盘根目录**，
+2. **把 `firmware/opendm40-v0.4.0-zh.bin` 复制到 U 盘根目录**，
    文件名随便，但**必须是 `DM40*.BIN`**
    （例如存成 `DM40FW.BIN`；叫 `firmware.bin` 就不会被识别）
 3. **安全弹出 / 卸载该卷**（让电脑把缓存写完）
    ```powershell
    # 假设表是 E: 盘
-   Copy-Item firmware\opendm40-v0.3.0-zh.bin E:\DM40FW.BIN
+   Copy-Item firmware\opendm40-v0.4.0-zh.bin E:\DM40FW.BIN
    Write-VolumeCache -DriveLetter E
    mountvol E: /P
    ```
@@ -271,7 +271,7 @@ pip install pyvisa pyvisa-py pyusb libusb-package
 ### 3. 刷入
 
 ```bash
-python tools/upload_zh.py firmware/opendm40-v0.3.0-zh.bin --update --wait 120
+python tools/upload_zh.py firmware/opendm40-v0.4.0-zh.bin --update --wait 120
 ```
 
 它会：
@@ -304,7 +304,7 @@ python tools/shot.py out.png
 
 ```bash
 # 回官方英文版
-python tools/upload_zh.py firmware/opendm40-v0.3.0-official.bin --update --wait 120
+python tools/upload_zh.py firmware/opendm40-v0.4.0-official.bin --update --wait 120
 
 # 回正点原子原厂固件（有中文界面）
 python tools/upload_zh.py firmware/dm40_v_2_6-stock.bin --update --wait 120
@@ -326,7 +326,7 @@ Windows 上的几个坑（`RUSTUP_HOME` 要用 Windows 路径、`PATH` 要用 MS
 `stackdepth.py` 缺 `.exe` 后缀）见 `docs/刷机与构建记录.md`。
 
 ```bash
-git clone --depth 1 --branch v0.3.0 https://github.com/opendm40/opendm40.git
+git clone --depth 1 --branch v0.4.0 https://github.com/opendm40/opendm40.git
 cd opendm40
 python3 ../patch/mkpatch2.py firmware/src ...
 # …… 按上表顺序应用 mkpatch4 ~ mkpatch8

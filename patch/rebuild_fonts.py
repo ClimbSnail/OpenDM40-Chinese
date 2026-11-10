@@ -163,6 +163,13 @@ def main():
     keep_txt = io.open(opt("--txt22-keep"), encoding="utf-8").read().strip()
     draw_txt = io.open(opt("--txt22-draw"), encoding="utf-8").read().strip()
     f14_chars = opt("--f14", "")
+    # Point size the hanzi are rendered at, inside the 22 px TEXT22 cell.
+    # v0.4.0-zh uses 16 px for every hanzi: 22 px does not fit in region B
+    # (17.8 KB vs 11.8 KB, CHANGELOG "字体：22 px → 16 px").
+    size = int(opt("--txt22-size", "22"))
+    # Cell width of a hanzi; the bitmap is w x ink_h bits, so this is what the
+    # glyph actually costs. 22 px wide at 16 px ink wastes 6 columns of blanks.
+    adv = int(opt("--txt22-adv", "22"))
     ascii_keep_file = opt("--ascii-keep")
     keep_ascii = None
     if ascii_keep_file:
@@ -188,10 +195,10 @@ def main():
         code = ord(ch)
         if code in have:
             continue
-        px, ih = render(ch, 22, 22, 22, 1)
+        px, ih = render(ch, size, 22, adv, 1)
         if px is None:
             continue
-        g.append([code, 22, 22, 22, 0, px])
+        g.append([code, adv, 22, adv, 0, px])
         have.add(code)
         added += 1
     sys.stderr.write("TEXT22: %d drawn (ink top 1)\n" % added)

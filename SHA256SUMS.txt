@@ -1,3 +1,5 @@
+75ab665aedd48ed80b06f5f1fe1975fd49de7c4b61ab6812ca38eb877afe2d05  firmware/DM40_v0.4.1.01.BIN
+72b1592136ead74f0b341c5e7af055a70693e5eee20094c3f42926d630a1f61b  firmware/opendm40-v0.4.1-official.bin
 b2ce5084dbd18fb9e4d4f5b66ae8d807d91d6863929288cb9fda7818a291b763  firmware/opendm40-v0.4.0-zh.bin
 1d8d067f98a61454a3346bbd8d6d17d2a1bbc2f3cb9a2cd6b7c4cc13044aa9c1  firmware/opendm40-v0.3.0-zh.bin
 206f159347330702644e127fcb17b8d53796b7ff77359c0f2c3fa38714b689ec  firmware/opendm40-v0.3.0-official.bin

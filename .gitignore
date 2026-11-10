@@ -3,6 +3,9 @@ target/
 *.o
 *.elf
 
+# 构建工作树（git worktree 检出 + 中间产物，见 docs/刷机与构建记录.md）
+build/
+
 # Python
 __pycache__/
 *.pyc

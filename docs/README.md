@@ -26,4 +26,5 @@
 
 - 仓库根目录的 [README](../README.md)：该刷哪个文件、怎么刷、版本对照
 - [CHANGELOG](../CHANGELOG.md)：按日期列出所有改动，含失败的尝试
-- [patch/ 说明](../patch/README.md)：一百多个改动脚本分别做什么
+- [patch/ 说明](../patch/README.md)：当前流水线与字形工具；v0.3.0 的 115 个老脚本归档在
+  [patch/legacy-v030/](../patch/legacy-v030/README.md)

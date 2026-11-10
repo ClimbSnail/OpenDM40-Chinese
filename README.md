@@ -1,9 +1,9 @@
 # OpenDM40-Chinese
 
 [opendm40](https://github.com/opendm40/opendm40) 开源万用表固件的**简体中文汉化**，
-面向正点原子 **DM40A / DM40B / DM40C**，基于 **v0.4.0** 源码。
+面向正点原子 **DM40A / DM40B / DM40C**，基于 **v0.4.1** 源码，版本号 **v0.4.1.01**。
 
-已在 **DM40A 真机**上测试通过。
+v0.4.0-zh10 版曾在 **DM40A 真机**上测试通过；**v0.4.1.01 尚未上真机**（见「已知问题」）。
 
 > opendm40 官方只有英文界面。本项目把主菜单、设置页、量程页等改为中文，
 > 并提供一份完整的中文使用说明书。
@@ -34,16 +34,16 @@
 | [firmware/说明.md](firmware/说明.md) | 四份镜像分别是什么、该刷哪个 |
 | [刷机与构建记录](docs/刷机与构建记录.md) | 怎么从源码重建 |
 | [开发记录](docs/开发记录.md) | 设计取舍、走过的弯路、验证方法（给想改代码的人）|
-| [patch/ 说明](patch/README.md) | 一百多个改动脚本分别做什么 |
+| [patch/ 说明](patch/README.md) | 当前流水线与字形工具分别做什么；v0.3.0 的老脚本在 [legacy-v030/](patch/legacy-v030/README.md) |
 
 ## 要刷的文件
 
-> **直接下载（推荐）**：[Releases · v0.4.0-zh9](
+> **直接下载（推荐）**：[Releases · v0.4.1.01](
 > https://github.com/xingyan4117-sketch/OpenDM40-Chinese/releases/latest)
-> —— 附件里就是 `opendm40-v0.4.0-zh.bin` 和 `SHA256SUMS.txt`
+> —— 附件里就是 `DM40_v0.4.1.01.BIN` 和 `SHA256SUMS.txt`
 
-**`firmware/opendm40-v0.4.0-zh.bin`** —— 632576 字节，
-CRC-32 `fd8d01b6`，SHA-256 `b2ce5084…b763`
+**`firmware/DM40_v0.4.1.01.BIN`** —— 634624 字节，
+CRC-32 `76abcf09`，SHA-256 `75ab66…2d05`
 
 校验：`sha256sum -c SHA256SUMS.txt`（Windows 用 `Get-FileHash` 逐个比对），
 完整清单见仓库根的 `SHA256SUMS.txt`。
@@ -63,7 +63,8 @@ CRC-32 `fd8d01b6`，SHA-256 `b2ce5084…b763`
 | zh7 | `fe7d08de` | 按内阻压降判定，但拔线偶尔还闪 |
 | zh8 | `6803c2d3` | v0.3.0 汉化最终版 |
 | zh9 | `12200498` | 移植到上游 v0.4.0（四通道示波器、协议解码器）|
-| **zh10** | `fd8d01b6` | **当前版本**：示波器五页全汉化、弹窗满宽、触发页两行布局 |
+| zh10 | `fd8d01b6` | v0.4.0 汉化最终版：示波器五页全汉化、弹窗满宽、触发页两行布局 |
+| **v0.4.1.01** | `76abcf09` | **当前版本**：移植到上游 v0.4.1，版本串 0.4.1.01，开机 Snail 字标居中，19 处错字体已修，弹窗/提示条中文改画 TEXT22，设备信息页厂商行为「正点原子 & 蜗牛」 |
 
 > 从 zh3 起，**发布过的附件不再覆盖**；有新改动就发新 tag。
 
@@ -184,15 +185,16 @@ CRC-32 `fd8d01b6`，SHA-256 `b2ce5084…b763`
 
 ### 刷哪一个文件？
 
-> ## 就刷：`firmware/opendm40-v0.4.0-zh.bin`
-> **632576 字节**，CRC-32 `12200498`，SHA-256 开头 `34a03183`
+> ## 就刷：`firmware/DM40_v0.4.1.01.BIN`
+> **634624 字节**，CRC-32 `76abcf09`，SHA-256 开头 `75ab665a`
 
-仓库里一共 4 个镜像，**其余三个都不要刷**：
+仓库里一共 6 个镜像，**其余几个都不要刷**：
 
 | 文件 | 是什么 | 刷吗 |
 |---|---|---|
-| **`firmware/opendm40-v0.4.0-zh.bin`** | **汉化版（本项目的成品）** | ✅ **刷这个** |
-| `firmware/opendm40-v0.4.0-official.bin` | 上游 opendm40 原版，**英文界面** | ❌ 只有想回退英文版才用 |
+| **`firmware/DM40_v0.4.1.01.BIN`** | **汉化版（本项目的成品）** | ✅ **刷这个** |
+| `firmware/opendm40-v0.4.1-official.bin` | 上游 opendm40 v0.4.1 原版，**英文界面** | ❌ 只有想回退英文版 / 先确认上游本身正常时才用 |
+| `firmware/opendm40-v0.4.0-zh.bin` | 上一版汉化（zh10） | ❌ 只有想回退上一版才用 |
 | `firmware/dm40_v_2_6-stock.bin` | **原厂 V2.6** 固件备份 | ❌ 只有想刷回出厂才用 |
 | `firmware/link-native.x` | 链接脚本，不是固件 | ❌ 不能刷 |
 
@@ -230,13 +232,12 @@ Update-HostStorageCache
 ### 步骤
 
 1. **USB 线连电脑**，表会挂成一个 U 盘（卷标 `DM40`，约 2 GB）
-2. **把 `firmware/opendm40-v0.4.0-zh.bin` 复制到 U 盘根目录**，
-   文件名随便，但**必须是 `DM40*.BIN`**
-   （例如存成 `DM40FW.BIN`；叫 `firmware.bin` 就不会被识别）
+2. **把 `firmware/DM40_v0.4.1.01.BIN` 复制到 U 盘根目录**，
+   它本来就叫 `DM40*.BIN`，**直接拷、不用改名**（叫 `firmware.bin` 就不会被识别）
 3. **安全弹出 / 卸载该卷**（让电脑把缓存写完）
    ```powershell
    # 假设表是 E: 盘
-   Copy-Item firmware\opendm40-v0.4.0-zh.bin E:\DM40FW.BIN
+   Copy-Item firmware\DM40_v0.4.1.01.BIN E:\DM40_v0.4.1.01.BIN
    Write-VolumeCache -DriveLetter E
    mountvol E: /P
    ```
@@ -285,7 +286,7 @@ pip install pyvisa pyvisa-py pyusb libusb-package
 ### 3. 刷入
 
 ```bash
-python tools/upload_zh.py firmware/opendm40-v0.4.0-zh.bin --update --wait 120
+python tools/upload_zh.py firmware/DM40_v0.4.1.01.BIN --update --wait 120
 ```
 
 它会：
@@ -300,7 +301,9 @@ python tools/upload_zh.py firmware/opendm40-v0.4.0-zh.bin --update --wait 120
 python tools/dm.py --query 'DBG:BOOT?'
 ```
 
-返回的加载器标记应与镜像头部一致（本项目为 `0xA0F25F0D 0x0009ADF4 0x000109A2`）。
+返回的加载器标记应与镜像头部一致（本项目为 `0x884377BC 0x0009AEF4 0x00014882`）。
+三个字依次是：头校验（长度 + body 校验值的 CRC-16 及其反码）、body 长度、body 校验值；
+只要镜像改过，这三个数就会变，对照时以自己镜像的 `dm40fw.py info` 输出为准。
 
 也可以插上 USB，检查 `INFO/FIRMWARE.BIN` 的 SHA-256 是否等于所刷镜像。
 
@@ -318,7 +321,7 @@ python tools/shot.py out.png
 
 ```bash
 # 回官方英文版
-python tools/upload_zh.py firmware/opendm40-v0.4.0-official.bin --update --wait 120
+python tools/upload_zh.py firmware/opendm40-v0.4.1-official.bin --update --wait 120
 
 # 回正点原子原厂固件（有中文界面）
 python tools/upload_zh.py firmware/dm40_v_2_6-stock.bin --update --wait 120
@@ -333,34 +336,61 @@ python tools/upload_zh.py firmware/dm40_v_2_6-stock.bin --update --wait 120
 
 ---
 
-## 从源码重建
+## 从源码重建（v0.4.1.01）
 
-需要 Rust 工具链（`thumbv7em-none-eabihf` + `llvm-tools`）与 git-bash。
-Windows 上的几个坑（`RUSTUP_HOME` 要用 Windows 路径、`PATH` 要用 MSYS 路径、
-`stackdepth.py` 缺 `.exe` 后缀）见 `docs/刷机与构建记录.md`。
+需要 Rust 工具链（`thumbv7em-none-eabihf` + `llvm-tools` + `rust-src`）、git-bash、Python 3（含 Pillow）。
+Windows 上的坑（`RUSTUP_HOME` 用 Windows 路径、`PATH` 用 MSYS 路径、
+`stackdepth.py` 缺 `.exe`、本机 `rm` 被安全删除钩子拦截）见 `docs/刷机与构建记录.md`。
 
 ```bash
-git clone --depth 1 --branch v0.4.0 https://github.com/opendm40/opendm40.git
-cd opendm40
-python3 ../patch/mkpatch2.py firmware/src ...
-# …… 按上表顺序应用 mkpatch4 ~ mkpatch8
-python3 ../patch/derive_sets.py <vendor-cjk-set> firmware/src/*.rs
-python3 ../patch/rebuild_fonts.py --pristine ... --out firmware/src/stockfont_data.rs ...
-firmware/build.sh
+# 1. 取上游源码到构建工作树（不要污染上游目录）
+git -C ../opendm40 worktree add build/worktree v0.4.1
+
+# 2. 套汉化：整条字符串字面量替换，命中数不符会直接报错
+python3 patch/v041/apply_dict.py --dict patch/v041/zh_dict.csv --src build/worktree/firmware/src
+
+# 2b. 中文只能画在 TEXT22 上：查一遍有没有用错字体，再把错的换过来
+python3 patch/v041/check_fonts.py --src build/worktree/firmware/src   # 应输出 0 行
+python3 patch/v041/font_fix.py   --src build/worktree/firmware/src
+
+# 2c. 弹窗/提示条：中文改画 TEXT22（原厂 ASCII26 没有汉字）
+python3 patch/v041/dialog_font.py --src build/worktree/firmware/src
+
+# 2d. 设备信息页厂商行加上项目标记（不是翻译，所以不放进词典；--value 可改）
+python3 patch/v041/vendor_name.py --src build/worktree/firmware/src
+
+# 3. 重新推导字表并生成 16 px 字库
+python3 patch/derive_sets.py <vendor-cjk-set> build/worktree/firmware/src/*.rs
+python3 patch/rebuild_fonts.py --pristine <v0.4.1 原始 stockfont_data.rs> \
+        --out build/worktree/firmware/src/stockfont_data.rs \
+        --txt22-keep patch/keep_cjk.txt --txt22-draw patch/need_glyphs.txt \
+        --txt22-size 16 --txt22-adv 16
+
+# 4. 开机字标（改字/改字号后重跑；生成脚本可加 --preview 先看字形）
+python3 patch/gen_splash_img2.py --text Snail --size 58
+python3 patch/v041/splash_logo.py --src build/worktree/firmware/src --img patch/splash_img.rs
+python3 patch/v041/splash_center.py --src build/worktree/firmware/src   # 整块垂直居中（TOP = 132）
+
+# 5. 构建（DM40_VERSION_SUFFIX 让版本串变成 0.4.1.01）
+#    产物直接叫 build/out/DM40_v0.4.1.01.BIN（U 盘要的 DM40*.BIN），不用改名
+DM40_VERSION_SUFFIX=.01 ./patch/v041/build_zh.sh
 ```
+
+`patch/v041/README.md` 说明了这套流水线每一步在做什么；
+`patch/legacy-v030/` 里是 v0.3.0 时代的锚点补丁，只对 v0.3.0 源码有效，**不要拿它打 v0.4.x**
+（留着是给 `harvest_patches.py` 复现词典译文来源用的，见 [`patch/legacy-v030/README.md`](patch/legacy-v030/README.md)）。
 
 ### 闪存余量（很紧）
 
-| 区域 | 剩余 | 硬性下限 |
+| 区域 | 剩余（v0.4.1.01 实测） | 硬性下限 |
 |---|---|---|
-| B（零等待） | **4,112 字节** | 3,900 |
-| C | 3,524 字节 | 3,400 |
+| A2 | 1,524 字节 | — |
+| B（零等待） | **4,224 字节** | 4,096（本项目把它从上游的 8,192 降下来了） |
+| C | 4,384 字节 | 4,096 |
 
-实测：**一个 22 px 汉字在 B 区约占 64 字节**（50 字节位图 + 10 字节条目 + 对齐）。
-**B 区只剩 212 字节余量——再加 3 个汉字就到顶了。**
-想再加中文必须先腾空间：A2 区还有 3,496 字节空闲（同样零等待），
-可以把一大块冷字库挪过去（`K_FONT_B` 约 2.3 KB，挪得动）。
-`patch/` 里的脚本和 `docs/` 记录了每一步是怎么换来的。
+一个 16 px 汉字在 B 区约占 40 字节（位图 16×墨迹高 + 8 字节条目）；全角标点墨迹小，约 25 字节。
+353 个字（含 `：，？！（）…、`）合计约 13.9 KB——上游 v0.4.1 的 B 区余量比 v0.4.0 多，够用但仍不宽裕。
+想再加中文先看余量，`patch/v041/README.md` 记了可以往 C 区挪的几处。
 
 ---
 
@@ -409,7 +439,7 @@ firmware/build.sh
 电池-不充电时白色 · 电池-充电中闪下一格
 
 **开机画面与刷机**
-开机画面-xingyan标 · 刷机-复制到U盘后弹窗
+开机画面-Snail标 · 刷机-复制到U盘后弹窗
 
 > 早期 v0.3.0 的中间过程截图（含被淘汰的旧版充电指示、英文界面）已清理，
 > 只保留与当前固件一致的部分。历史对照见 [版本对比文档](docs/版本对比-v3与v4.md)。

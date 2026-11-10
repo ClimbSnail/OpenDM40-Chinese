@@ -1,0 +1,387 @@
+en,zh,status,where
+ (n/a here),（此功能无速率）,manual,app.rs:1003
+", VA only",，仅 VA,manual,ui_power.rs:904
+", zero: not set",，零点未设,manual,ui_power.rs:906
+", zero: set",，零点已设,manual,ui_power.rs:905
+0.90 mA,,keep,ui.rs:1831
+100 nA,,keep,ui.rs:1626
+2 fingers down,双指下滑,manual,ui.rs:3770
+3 fingers down,三指下滑,manual,ui.rs:3769
+< Prev,< 上一页,manual,gallery.rs:2308
+A-JACK,A 插孔,manual,"sentinel.rs:93,ui.rs:1466"
+A-PROT,,keep,sentinel.rs:94
+ABS,绝对值,manual,"scope_ui.rs:1013,scope_ui.rs:3581"
+AC present: use AC+DC,有 AC：用 AC+DC,manual,"powermeter.rs:464,sentinel.rs:1681"
+AJACK,,keep,sentinel.rs:78
+APROT,,keep,sentinel.rs:79
+Aborted,已中止,manual,ui_power.rs:892
+Alerts,告警,manual,ui.rs:3293
+Alientek,正点原子,manual,app.rs:1091
+Arm,,keep,app_inrush_live.rs:89
+Armed: ,,keep,app_inrush_live.rs:75
+Arming ...,,keep,app_inrush_live.rs:74
+Auto,自动,manual,"scope_page.rs:996,scope_ui.rs:3318,ui_decode.rs:425,ui_decode.rs:438"
+AutoAC,,keep,ui.rs:1377
+AutoDC,,keep,ui.rs:1377
+Autorange,自动量程,manual,ui.rs:3781
+BEEP,,keep,"scope_page.rs:688,ui.rs:704"
+Band,,keep,"ui_decode.rs:421,ui_decode.rs:421"
+Battery empty: off in 10 s,电量耗尽：10 秒后关机,manual-new,dialog.rs:57
+Battery empty: off in 20 s,电量耗尽：20 秒后关机,manual-new,dialog.rs:56
+Battery empty: off in 30 s,电量耗尽：30 秒后关机,manual-new,dialog.rs:55
+Baud:,波特率：,manual,ui_decode.rs:387
+Brightness:,亮度：,manual,scope_ui.rs:3293
+Burden,压降,manual,ui.rs:190
+CAP,电容,manual,"scpi.rs:89,scpi.rs:2620,scpi.rs:2623,scpi.rs:2626"
+CH1,,keep,"scope.rs:360,scope_ui.rs:327,scope_ui.rs:990,scope_ui.rs:990"
+CH2 (DMM):,,keep,scope_ui.rs:3305
+CONT,通断,manual,"scpi.rs:90,scpi.rs:1000,ui.rs:1366"
+Cancels in 3 s,3 秒后取消,manual,dialog.rs:137
+Cannot delete,无法删除,manual,"gallery.rs:1805,gallery.rs:1806,gallery.rs:1807,gallery.rs:1808"
+Capacitance Settings,电容设置,manual,ui.rs:1652
+Change,更改,manual,ui.rs:3699
+Change view,切换视图,manual,ui.rs:3767
+Color,颜色,manual,"scope_ui.rs:3557,scope_ui.rs:3577"
+Coupling,耦合,manual,scope_ui.rs:3557
+DATA LOGGING,数据记录,manual,dialog.rs:455
+DIODE,二极管,manual,"dbgsrc.rs:77,ui.rs:1367"
+Decode,解码,manual,"scope_ui.rs:3038,ui_log.rs:382,ui_log.rs:393"
+Decode log,解码日志,manual,ui.rs:3753
+Default,默认,manual,scope_ui.rs:3289
+Delete failed,删除失败,manual,gallery.rs:1808
+Delete screenshot?,删除这张截图？,manual,gallery.rs:2356
+Delete this log?,删除这条记录？,manual,gallery.rs:2356
+Device info,设备信息,manual,ui.rs:3284
+Diode,二极管,manual,"csvlog.rs:1237,meter.rs:93"
+Discharging...,放电中...,manual,"dmm.rs:381,ui.rs:1275"
+Disk busy,磁盘忙,manual,"app.rs:3286,app.rs:3648,gallery.rs:56,gallery.rs:2210"
+Disk read error,读磁盘出错,manual,gallery.rs:2216
+Edge,边沿,manual,"scope_page.rs:1034,trigsoft.rs:24"
+Edge:,边沿：,manual,scope_ui.rs:3315
+Empty file,文件是空的,manual,gallery.rs:1923
+FFT,,keep,"scope_ui.rs:1013,scope_ui.rs:3581"
+FLAT,平坦,manual,powermeter.rs:2056
+FREQ,频率,manual,"scpi.rs:90,ui.rs:1369"
+FUSE,保险丝,manual,"scpi.rs:2176,sentinel.rs:84,sentinel.rs:3427"
+FUSE?,保险丝？,manual,sentinel.rs:99
+Falling,下降,manual,scope_ui.rs:3317
+Fast log cancelled,快速记录已取消,manual,app.rs:1510
+Fast log failed,快速记录失败,manual,app.rs:1513
+File not found,找不到文件,manual,"gallery.rs:1807,gallery.rs:1830"
+Files live (replug),,todo,ui.rs:3319
+Firmware upload,固件上传,manual,gallery.rs:173
+Format:,格式：,manual,ui_decode.rs:387
+Fuse OK,保险丝正常,manual,ui.rs:1739
+Fuse open,保险丝熔断,manual,ui.rs:1740
+GEN trace:,信号源轨迹：,manual,scope_ui.rs:3301
+"Gain vs DC V / AC V, 8 s",V 增益对比，8 秒,manual,ui_power.rs:800
+Gestures,手势,manual,ui.rs:3765
+Grid intensity:,网格亮度：,manual,scope_ui.rs:3293
+HOLD,,keep,"dlog.rs:51,ui.rs:1428,ui.rs:1460,ui.rs:1490"
+Hardware,硬件,manual,app.rs:1096
+Help ,帮助,manual,ui.rs:3812
+Hold; run / stop,长按：运行/停止,manual,ui.rs:3780
+Hz/Div,,keep,scope_ui.rs:3577
+Inverted,反相,manual,ui_decode.rs:423
+Keys,按键,manual,ui.rs:3777
+LIVE,,keep,"sentinel.rs:81,sentinel.rs:107,ui_log.rs:142"
+LIVE?,,keep,"sentinel.rs:21,sentinel.rs:96,ui.rs:1467"
+LOAD,负载,manual,ui_power.rs:607
+"Leads open, nothing in A",表笔开路，A 孔无电流,manual,ui_power.rs:798
+Loading...,载入中...,manual,"splash.rs:2,splash.rs:16,splash.rs:66"
+Low battery! Please charge,电量低！请充电,manual-new,dialog.rs:50
+Lower,下限,manual,app.rs:2163
+MANU,手动,manual,"ui.rs:1592,ui.rs:1597,ui.rs:1599"
+MATH,运算,manual,scope_ui.rs:3577
+MCX,,keep,"scope_ui.rs:359,scope_ui.rs:1000"
+MENU,菜单,manual,"ui.rs:3779,ui_touchtest.rs:52"
+Manual,手动,manual,ui_decode.rs:425
+Menu / back,菜单/返回,manual,ui.rs:3779
+Mode,模式,manual,scope_ui.rs:3577
+Mode Remember,模式记忆,manual,"app.rs:225,scpi.rs:211,scpi.rs:1088,ui.rs:3273"
+Mode:,模式：,manual,"scope_ui.rs:3316,ui_decode.rs:387,ui_decode.rs:392"
+Move that marker,移动该标记,manual,ui.rs:3771
+NOTREACTIVE,非无功,manual,"powermeter.rs:2056,powermeter.rs:2462"
+Needs the P + PF method,需 P+PF 方法,manual,ui_power.rs:860
+Next >,下一页 >,manual,gallery.rs:2308
+No AC: DC is more precise,无 AC：DC 更准,manual,powermeter.rs:464
+No screenshots or logs,没有截图或记录,manual,gallery.rs:2220
+Noise,噪声,manual-new,dmm.rs:418
+Normal,常规,manual,"scope_page.rs:997,scope_ui.rs:3318,ui_decode.rs:423"
+"OFF: V, P at the jacks",关：插孔有 V、P,manual,ui_power.rs:915
+OHM,电阻,manual,"scpi.rs:1223,scpi.rs:1530,scpi.rs:1722,ui.rs:1365"
+OVERLOAD,过载,manual,"sentinel.rs:77,sentinel.rs:91,sentinel.rs:3281"
+OVLD,,keep,sentinel.rs:92
+On change,变化时,manual,"csvlog.rs:42,ui.rs:3705,ui.rs:3706"
+Other,其他,manual,"scope_ui.rs:3577,ui.rs:3289,ui.rs:3297"
+Overflow,溢出,manual,"ui.rs:335,ui.rs:1128,ui.rs:1133,ui.rs:1254"
+PASS,通过,manual,"ui.rs:1419,ui.rs:1497"
+PAUSE,暂停,manual,"ui_power.rs:355,ui_power.rs:362"
+PC can edit (replug),可编辑（请重插）,manual,ui.rs:3320
+POWER,功率,manual,ui.rs:1371
+Persist:,保持时间：,manual,scope_ui.rs:3293
+Point ,点,manual,ui_touchtest.rs:210
+Polarity:,极性：,manual,"ui_decode.rs:387,ui_decode.rs:392"
+Power key twice,连按两次电源键,manual,ui.rs:3783
+Power off,关机,manual,ui.rs:3770
+Power off?,关机？,manual,"dialog.rs:136,setfile.rs:37"
+Press effect,按压效果,manual,ui.rs:3283
+PriScr,截屏,manual,"scope_ui.rs:3352,screenshot.rs:2"
+Probe,探头,manual,scope_ui.rs:3557
+Protocol:,协议：,manual,"ui_decode.rs:387,ui_decode.rs:392"
+Pulse,脉冲,manual,trigsoft.rs:24
+RANGE,量程,manual,"app_power.rs:663,powermeter.rs:2056"
+RUN,运行,manual,"app_power.rs:657,powermeter.rs:2056,scope_ui.rs:86,scope_wav.rs:141"
+Range / menu,量程/菜单,manual,ui.rs:3782
+Read error,读取错误,manual,"gallery.rs:1789,gallery.rs:1923,gallery.rs:1969,gallery.rs:2007"
+Reading the disk,正在读磁盘,manual,gallery.rs:2211
+Reading the log,正在读记录,manual,gallery.rs:2236
+Record on / off,记录开/关,manual,ui.rs:3768
+Recording,记录中,manual,gallery.rs:2084
+Reset energy?,清零电能？,manual,dialog.rs:148
+Rising,上升,manual,scope_ui.rs:3317
+Roll:,滚动：,manual,scope_ui.rs:3293
+Runt,短脉冲,manual,trigsoft.rs:24
+SHORT,短路,manual,"scope_page.rs:688,ui.rs:704"
+SIN,,keep,app.rs:5344
+SOURCE,信号源,manual,ui_power.rs:607
+Save CSV,存CSV,manual,"scope_csv.rs:2,scope_page.rs:946,scope_ui.rs:3353"
+Saved,已保存,manual,"app.rs:1508,app.rs:3624,app.rs:3643"
+Saving ...,保存中…,manual,app_inrush_live.rs:87
+Saving a screenshot,正在存截图,manual,gallery.rs:170
+Saving the CSV log,正在存 CSV,manual,gallery.rs:171
+Scope,示波器,manual,"scope_wav.rs:1,ui.rs:3280,ui.rs:3296"
+Scope: drag marker,示波器：拖动标记,manual,ui.rs:3771
+Scope: drag up/down,示波器：上下拖动,manual,ui.rs:3773
+Scope: side drag,示波器：侧边拖动,manual,ui.rs:3772
+Screenshot,截图,manual,"gesture.rs:29,scope_page.rs:2381,screenshot.rs:2,ui.rs:3769"
+Selected item,所选项目,manual,ui.rs:3773
+Single,单次,manual,"scope_page.rs:998,scope_ui.rs:3318"
+Software,软件,manual,"app.rs:1076,app.rs:1095,ui.rs:3840"
+Source:,来源：,manual,scope_ui.rs:3344
+Start recording,开始记录,manual,ui.rs:3730
+Stop recording,停止记录,manual,ui.rs:3730
+Stop the recording,停止记录,manual,gallery.rs:1805
+Swipe,滑动,manual,ui.rs:3283
+Swipe down (DMM),下滑（万用表）,manual,ui.rs:3768
+Swipe down with 3 fingers to save a screenshot,三指下滑可保存截图,manual,gallery.rs:2220
+Swipe left / right,左右滑动,manual,ui.rs:3767
+TEMP,温度,manual,"scpi.rs:90,ui.rs:1372"
+Takes about 12 s,约需 12 秒,manual,ui_power.rs:798
+Tap step,点按步进,manual,ui.rs:3283
+Tap: next page,点按：下一页,manual,ui.rs:3823
+Temp,温度,manual,meter.rs:93
+Threshold:,阈值：,manual,"ui_decode.rs:387,ui_decode.rs:392"
+Touch lock,触摸锁定,manual,ui.rs:3783
+Trigger position,触发位置,manual,ui.rs:3772
+Triggered: recording 2 s ...,已触发：记录 2 秒…,manual,app_inrush_live.rs:76
+Type:,类型：,manual,scope_ui.rs:3321
+USB host is writing,电脑正在写入,manual,gallery.rs:172
+Unstable: unplug USB?,读数不稳：拔掉 USB？,manual-new,ui.rs:1301
+Unsupported,不支持,manual,gallery.rs:1902
+Unsupported format,格式不支持,manual,"gallery.rs:32,gallery.rs:1902,gallery.rs:1927,gallery.rs:2001"
+Upper,上限,manual,app.rs:2162
+V cal of this V range,本量程的 V 校准,manual,ui_power.rs:800
+V cal: V not steady,V 校准：V 不稳,manual,ui_power.rs:884
+V-JACK,V 插孔,manual,sentinel.rs:106
+V-JACK?,V 插孔？,manual,"sentinel.rs:95,ui.rs:1467"
+VJACK,,keep,sentinel.rs:80
+Vendor,厂商,manual,app.rs:1091
+"Wh, VAh and the time",电能与时间,manual,dialog.rs:149
+Width:,脉宽：,manual,scope_ui.rs:3325
+Zero,清零,manual,"powermeter.rs:1798,ui_power.rs:736,ui_power.rs:779"
+Zero stored,零点已存,manual,ui_power.rs:864
+Zero the power meter,功率计清零,manual,ui_power.rs:798
+Zero: signal present,清零：有信号,manual,ui_power.rs:868
+auto,自动,manual,"ui.rs:2781,ui.rs:2993,ui.rs:3015"
+logic level,,keep,"ui.rs:2995,ui.rs:3017"
+low,弱,manual-new,lowbat.rs:15
+max 10 MHz,最大 10 MHz,manual,genplan.rs:112
+max 50 kHz,最大 50 kHz,manual,"genplan.rs:113,ui.rs:3002"
+n/a,,keep,"app.rs:1192,ui.rs:2314,ui.rs:2470"
+no limit,无限制,manual,ui_power.rs:642
+shunt,分流,manual,ui_power.rs:627
+", max ", 最大 ,harvest,ui_touchtest.rs:229
+0 A for 60 s: check the fuse?,60 秒无电流，检查保险丝？,harvest,sentinel.rs:137
+0.28 mA ON,0.28 mA 开,harvest,ui.rs:1831
+1 h,1小时,harvest,ui.rs:3711
+1 hour,1小时,harvest,app.rs:66
+1 min,1分,harvest,"app.rs:1439,ui.rs:3706"
+1 s,1秒,harvest,ui.rs:3706
+10 min,10分,harvest,"app.rs:65,app.rs:66,ui.rs:3711"
+10 s,10秒,harvest,ui.rs:3706
+24 h,24小时,harvest,ui.rs:3711
+30 min,30分,harvest,"app.rs:65,app.rs:66"
+5 min,5分,harvest,app.rs:65
+8 h,8小时,harvest,ui.rs:3711
+< Back,< 返回,harvest,"app.rs:4185,gallery.rs:8,gallery.rs:16,gallery.rs:107"
+A input path intact,A 通道完好,harvest,ui.rs:1739
+A jack current: 10 A shunt on,A 插孔有电流，已开 10 A 分流,harvest,sentinel.rs:132
+A-JACK only,仅 A-JACK,harvest,"app.rs:120,sentinel.rs:952,sentinel.rs:3364"
+AC voltage here: use AC V?,这里是交流，改用交流 V？,harvest,"app.rs:3020,sentinel.rs:136"
+AUTO starts on mV: AUTO+ is safer,自动从 mV 起: 自动+ 更安全,harvest,dmm.rs:569
+AUTO+ recommended: never steps to mV,自动+ 更安全: 不降到 mV,harvest,app.rs:983
+AUTO: DC (no AC signal),自动: 直流 (无交流信号),harvest,dialog.rs:61
+AUTO: no signal found,自动: 未找到信号,harvest,scope_page.rs:2884
+Accuracy,准确度,harvest,"app.rs:1106,ui.rs:343,ui.rs:373,ui.rs:3284"
+Again,再次,harvest,"ui.rs:1739,ui.rs:1740,ui.rs:1741,ui.rs:1742"
+Analog power,电源方式,harvest,ui.rs:3282
+At load,带载,harvest,"app.rs:438,powermeter.rs:446,powermeter.rs:589,powermeter.rs:1174"
+Auto (per view),自动 (按视图),harvest,app.rs:1028
+Auto Hold,自动保持,harvest,ui.rs:3692
+Back,返回,harvest,"ui.rs:3231,ui_inrush.rs:92"
+Backlight,背光亮度,harvest,ui.rs:3282
+Bargraph,柱状图,harvest,app.rs:1031
+Before: mean ,校准前 均值 ,harvest,ui_touchtest.rs:232
+Bluetooth,蓝牙,harvest,"bt.rs:865,ui.rs:3282"
+Both always,两者常开,harvest,"app.rs:871,app.rs:1028,app.rs:2271"
+Burden voltage,压降,manual,"scpi.rs:206,ui.rs:189,ui.rs:3284"
+Calibrate,校准,harvest,"ui_touchtest.rs:63,ui_touchtest.rs:120"
+Cancel,取消,harvest,"app_inrush_live.rs:85,gallery.rs:19,gallery.rs:1194,ui.rs:1737"
+Check leads,检查表笔,harvest,"dmm.rs:2164,ui.rs:1741,ui.rs:1742"
+Clear,清除,harvest,"scope_ui.rs:3288,ui_touchtest.rs:63,ui_touchtest.rs:121"
+Clear limits,清除限值,harvest,ui.rs:3692
+Cold junction ,,keep,app.rs:4440
+Combined view: ,,keep,ui.rs:3193
+Corners,四角,manual,"scope_ui.rs:194,scope_ui.rs:214"
+Current Settings,电流设置,harvest,ui.rs:1650
+Current in A jack: check leads,A 插孔有电流，请检查表笔,harvest,sentinel.rs:131
+Current too high: reduce it,"电流过大, 请降低",harvest,app_power.rs:204
+DC voltage here: use DC V?,这里是直流，改用直流 V？,harvest,sentinel.rs:135
+DC-coupled AC row,交流档为直流耦合,harvest,app_wave.rs:423
+DMM + Scope,万用表+示波器,harvest,ui.rs:3741
+DMM rate,采样率,harvest,"app.rs:142,ui.rs:3283"
+DMM row,万用表副行,manual,"ui.rs:312,ui.rs:340,ui.rs:3283"
+Danger alarm,危险告警,manual,"danger.rs:22,scpi.rs:187,ui.rs:3284"
+Delete,删除,harvest,"gallery.rs:19,gallery.rs:2357,gallery.rs:2434"
+Device,设备,harvest,"ui.rs:3746,ui.rs:3861"
+Dim screen,暗屏时间,harvest,ui.rs:3282
+"Disk busy, try again","磁盘忙, 请重试",harvest,"gallery.rs:1806,scope_page.rs:957"
+Display,显示,harvest,"scope_ui.rs:3038,ui.rs:3292"
+Duration,时长,harvest,ui.rs:3699
+Duty,占空,harvest,"app.rs:2157,ui.rs:2764"
+Every reading,每次,harvest,"ui.rs:3647,ui.rs:3706"
+"Exit: power key, hold 2 s",退出：长按电源键 2 秒,harvest,ui_touchtest.rs:265
+Fail beep,失败提示音,manual,ui.rs:3693
+Fast,快,manual,"app.rs:180,app.rs:459,app.rs:1399,app.rs:1466"
+Fast: DC/AC V or A only,快速仅限 V/A,harvest,app.rs:1477
+Files live,只读,harvest,"ui.rs:3317,vdisk.rs:61,vwrite.rs:5"
+Firmware received,固件已接收,harvest,dialog.rs:158
+Fit error: mean ,拟合误差 均值 ,harvest,ui_touchtest.rs:229
+Fixed rate in this function,此功能固定速率,harvest,app.rs:1221
+Free,可用,harvest,ui.rs:3699
+Frequency,频率,harvest,"app.rs:2151,csvlog.rs:1239,ui.rs:2764"
+Fuse check,保险丝自检,harvest,"ui.rs:1698,ui.rs:1737,ui.rs:1738,ui.rs:1814"
+Gallery,图库,harvest,"gallery.rs:8,gallery.rs:2203,ui.rs:3749"
+Gallery: screenshots and logs,图库 截图记录,harvest,ui.rs:3190
+Good fit: Save applies it,拟合良好，保存后生效,harvest,ui_touchtest.rs:241
+HIGH,高,harvest,"meter.rs:280,scpi.rs:2598"
+Halves (stock),对半（原厂）,manual,scope_ui.rs:214
+Help,帮助,manual,"ui.rs:3283,ui.rs:3750,ui.rs:3820"
+History,历史,harvest,app.rs:1031
+Hold & Limits,保持限值,harvest,ui.rs:3747
+Hold & Limits: ,,keep,app.rs:1329
+Hold/Limits,保持限值,harvest,ui.rs:1757
+I ranging...,电流量程...,harvest,"app.rs:2043,app_power.rs:193,powermeter.rs:2016"
+Inrush,涌流,harvest,"app_inrush.rs:9,app_inrush.rs:84,ui.rs:1702,ui.rs:1709"
+Inrush Current,涌流,harvest,"ui_inrush.rs:8,ui_inrush.rs:72"
+Install it now?,现在安装？,harvest,dialog.rs:159
+Installing firmware...,正在安装固件...,harvest,app.rs:3061
+Interval,间隔,harvest,ui.rs:3699
+Irms 100 ms,有效值100ms,harvest,ui_inrush.rs:26
+Jack alerts,告警开关,harvest,"app.rs:114,sentinel.rs:35,sentinel.rs:39,sentinel.rs:952"
+Keep holding to exit,继续按住即退出,harvest,ui_touchtest.rs:265
+Key/alert volume,按键/告警音量,manual,"scpi.rs:192,ui.rs:3282"
+Keypad,键盘,harvest,ui.rs:3745
+LOW,低,harvest,"meter.rs:280,scpi.rs:2598"
+Lead from V/ohm jack to A,表笔从 V/Ω 插孔接到 A,harvest,ui.rs:1737
+Limits,限值,harvest,"ui.rs:1757,ui.rs:1777,ui.rs:1875,ui.rs:2013"
+Loud,高,harvest,danger.rs:27
+Lower = reading,下限=读数,harvest,ui.rs:3692
+Lower limit,下限,harvest,ui.rs:3692
+Main menu,主菜单,harvest,ui.rs:3742
+Measure,测量,harvest,scope_ui.rs:3038
+Measuring ...,测量中 ...,harvest,ui.rs:1738
+Multimeter,万用表,harvest,"ui.rs:3160,ui.rs:3295,ui.rs:3478,ui.rs:3738"
+NTC user,NTC自定义,harvest,"ui.rs:1919,ui.rs:1921,ui.rs:1925"
+Negative ohm,负电阻,harvest,"dmm.rs:2141,scpi.rs:209,scpi.rs:1086,ui.rs:3284"
+Never,永不,harvest,"app.rs:65,app.rs:66"
+No,否,harvest,"dialog.rs:140,dialog.rs:152,dialog.rs:171"
+No data,无数据,harvest,gallery.rs:2084
+No ohm reading,无电阻读数,harvest,ui.rs:1742
+No reading to log,无数值可记录,harvest,app.rs:3611
+Not a DM40 update file,不是 DM40 升级文件,harvest,dialog.rs:163
+OFF,关,harvest,"app.rs:121,app.rs:1026,app.rs:1040,app.rs:1042"
+OFF (stock),关 (原厂),harvest,"app.rs:1034,app.rs:1039,app.rs:1041"
+OK,确定,harvest,"app_power.rs:658,bt.rs:97,bt.rs:717,bt.rs:750"
+OL: no path from V to A,OL: V 到 A 不通,harvest,ui.rs:1740
+ON,开,harvest,"app.rs:119,app.rs:1026,app.rs:1034,app.rs:1040"
+"ON (A, mA, uA)","开 (A, mA, uA)",harvest,app.rs:1039
+Off,关,harvest,"danger.rs:27,scope_ui.rs:214,scope_ui.rs:3296,scope_ui.rs:3302"
+Off (stock),关 (原厂),harvest,app.rs:1033
+Offset,偏移,harvest,"app.rs:2158,app.rs:2159,ui.rs:1929,ui.rs:2031"
+One lead V/ohm to A only,只用一根表笔接 A,harvest,"ui.rs:1741,ui.rs:1742"
+Oscilloscope,示波器,harvest,"ui.rs:3161,ui.rs:3739"
+Overload: 10 A shunt selected,过载：已切到 10 A 分流,harvest,sentinel.rs:130
+PC can edit,可编辑,manual,"ui.rs:3318,vwrite.rs:7"
+Peak,峰值,harvest,ui_inrush.rs:26
+Power Settings,功率设置,harvest,ui_power.rs:722
+Power meter: wiring,功率计接线,harvest,ui_power.rs:603
+Ramp,上升,harvest,genplan.rs:80
+Range,量程,harvest,ui.rs:3744
+Re-plug USB to apply,请重插 USB 生效,harvest,app.rs:4274
+Record,记录,harvest,"ui.rs:1793,ui.rs:1806,ui.rs:3687,ui.rs:3693"
+Recording CSV,正在记录,harvest,app.rs:3608
+Replace: 10 A ceramic fuse,更换 10A 陶瓷保险丝,harvest,ui.rs:1740
+Reset,重置,harvest,ui_touchtest.rs:202
+Reset Wh,复位,harvest,ui_power.rs:692
+Resistor Settings,电阻设置,harvest,ui.rs:1651
+Save,保存,harvest,ui_touchtest.rs:244
+"Saving CSV, wait","正在保存, 请稍候",harvest,scope_page.rs:2264
+Saving CSV...,正在保存...,harvest,scope_page.rs:1016
+Scope drag,示波器拖动,harvest,scope_page.rs:2969
+Scope tap step,点击档位,harvest,"scope_page.rs:24,scope_page.rs:348,scope_ui.rs:206"
+Sensor current ~,,keep,app.rs:4435
+Settings,设置,harvest,"scope_ui.rs:3038,ui.rs:3163,ui.rs:3466,ui.rs:3743"
+Shutdown,关机时间,harvest,ui.rs:3282
+Signal,信号源,harvest,"ui.rs:3162,ui.rs:3740"
+Sine,正弦,harvest,genplan.rs:77
+Smoothing,平滑,harvest,ui.rs:3283
+Square,方波,harvest,genplan.rs:78
+Start,开始,harvest,"ui.rs:1737,ui_power.rs:802"
+Start page,起始页,manual,ui.rs:3282
+Stop the recording first,请先停止记录,harvest,"app.rs:4143,app.rs:4148"
+TC K,K热电偶,harvest,"ui.rs:1919,ui.rs:1921"
+Tap the value to type it,点按数值可输入,manual,ui.rs:2037
+Tap the value to type it (TC: on the CJ),点数值可输入,harvest,ui.rs:2037
+Tap the yellow cross,点击黄色十字,harvest,ui_touchtest.rs:200
+Temp unit,温度单位,harvest,"dmm.rs:3892,ui.rs:3283"
+Temperature Settings,温度设置,harvest,ui.rs:2030
+Top bar,顶栏,harvest,app.rs:1033
+Touch calibration,触摸校准,harvest,ui_touchtest.rs:199
+Touch calibration reset,触摸校准已复位,harvest,app_touchtest.rs:377
+Touch calibration saved,触摸校准已保存,harvest,app_touchtest.rs:443
+Touch test,触摸测试,harvest,"ui.rs:3284,ui.rs:3752"
+Triangle,三角,harvest,genplan.rs:79
+Trigger,触发,harvest,"hwtrig.rs:3,scope_ui.rs:3038,ui_inrush.rs:9,ui_inrush.rs:73"
+Try again,重试,harvest,ui_touchtest.rs:244
+USB disk,U盘,harvest,"app.rs:244,ui.rs:3284,ui.rs:3313,vdisk.rs:62"
+Until stopped,手动停,harvest,"ui.rs:3647,ui.rs:3711"
+Upper = reading,上限=读数,harvest,ui.rs:3692
+Upper limit,上限,harvest,ui.rs:3692
+V cal,电压校准,harvest,"powermeter.rs:1807,ui_power.rs:737,ui_power.rs:780"
+V calibration...,电压校准...,harvest,powermeter.rs:2014
+Voltage Settings,电压设置,harvest,ui.rs:1649
+"Voltage on V jack, no current",V 插孔有电压，无电流,harvest,sentinel.rs:133
+Voltage on circuit - power off,电路带电，请先断电,harvest,sentinel.rs:134
+Volume,音量,harvest,danger.rs:27
+Wave,波形,harvest,"app_wave.rs:4,app_wave.rs:177,ui.rs:1695,ui.rs:1809"
+Wave: data logger running,波形: 记录运行中,harvest,app_wave.rs:199
+Wave: no AD2 row here,波形: 此处无 AD2,harvest,"app_wave.rs:219,main.rs:1642"
+Wiring,接线,harvest,ui_power.rs:692
+Yes,是,harvest,"dialog.rs:141,dialog.rs:153,dialog.rs:172"
+Zeroing: leads open,清零中,harvest,powermeter.rs:2013
+corrected,校正,harvest,ui_touchtest.rs:112
+down,下滑,harvest,"gesture.rs:265,ui_touchtest.rs:118"
+nothing else connected,其他不要接,harvest,ui.rs:1737
+raw,原始,harvest,ui_touchtest.rs:110

@@ -28,12 +28,25 @@ stock = set(io.open(stock_path, encoding="utf-8").read().strip())
 NO_COMMENT = re.compile(r"//[^\n]*")
 LITERAL = re.compile(r'"([^"\n]*)"')
 
+
+def wanted(ch):
+    """Characters the font must carry: hanzi, plus the CJK punctuation the
+    translations use (：，？！（）…、).
+
+    The ranges `\\u3000-\\u303f` / `\\uff00-\\uffef` were left out at first and
+    it went unnoticed: a glyph that is not in the font still *advances* the
+    pen (one blank cell), so "边沿：" simply lost its colon instead of
+    breaking the layout, and the confirm dialogs' 否 / 是 were blank.
+    """
+    o = ord(ch)
+    return 0x4E00 <= o <= 0x9FFF or 0x3000 <= o <= 0x303F or 0xFF00 <= o <= 0xFFEF or o == 0x2026
+
 seen = []
 for p in srcs:
     text = io.open(p, encoding="utf-8").read()
     for m in LITERAL.finditer(NO_COMMENT.sub("", text)):
         for ch in m.group(1):
-            if "\u4e00" <= ch <= "\u9fff" and ch not in seen:
+            if wanted(ch) and ch not in seen:
                 seen.append(ch)
 
 keep = [c for c in seen if c in stock]

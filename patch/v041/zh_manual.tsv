@@ -1,0 +1,221 @@
+# English	Chinese	kind(zh|keep) -- reviewed against the zh10 image's own wording
+ (n/a here)	（此功能无速率）	zh
+, VA only	，仅 VA	zh
+, zero: not set	，零点未设	zh
+, zero: set	，零点已设	zh
+0.90 mA		keep
+100 nA		keep
+2 fingers down	双指下滑	zh
+3 fingers down	三指下滑	zh
+< Prev	< 上一页	zh
+A-JACK	A 插孔	zh
+A-PROT		keep
+ABS	绝对值	zh
+AC present: use AC+DC	有 AC：用 AC+DC	zh
+AJACK		keep
+APROT		keep
+Aborted	已中止	zh
+Alerts	告警	zh
+Alientek	正点原子	zh
+Arm		keep
+Armed:		keep
+Arming ...		keep
+Auto	自动	zh
+AutoAC		keep
+AutoDC		keep
+Autorange	自动量程	zh
+BEEP		keep
+Band		keep
+Baud:	波特率：	zh
+Battery empty: off in 10 s	电量耗尽：10 秒后关机	zh
+Battery empty: off in 20 s	电量耗尽：20 秒后关机	zh
+Battery empty: off in 30 s	电量耗尽：30 秒后关机	zh
+Brightness:	亮度：	zh
+Burden	压降	zh
+Burden voltage	压降	zh
+CAP	电容	zh
+CH1		keep
+CH2 (DMM):		keep
+CONT	通断	zh
+Cancels in 3 s	3 秒后取消	zh
+Cannot delete	无法删除	zh
+Capacitance Settings	电容设置	zh
+Change	更改	zh
+Change view	切换视图	zh
+Color	颜色	zh
+Coupling	耦合	zh
+Corners	四角	zh
+DATA LOGGING	数据记录	zh
+DIODE	二极管	zh
+DMM row	万用表副行	zh
+Danger alarm	危险告警	zh
+Decode	解码	zh
+Decode log	解码日志	zh
+Default	默认	zh
+Delete failed	删除失败	zh
+Delete screenshot?	删除这张截图？	zh
+Delete this log?	删除这条记录？	zh
+Device info	设备信息	zh
+Diode	二极管	zh
+Discharging...	放电中...	zh
+Disk busy	磁盘忙	zh
+Disk read error	读磁盘出错	zh
+Edge	边沿	zh
+Edge:	边沿：	zh
+Empty file	文件是空的	zh
+FFT		keep
+FLAT	平坦	zh
+FREQ	频率	zh
+FUSE	保险丝	zh
+FUSE?	保险丝？	zh
+Fail beep	失败提示音	zh
+Falling	下降	zh
+Fast	快	zh
+Fast log cancelled	快速记录已取消	zh
+Fast log failed	快速记录失败	zh
+File not found	找不到文件	zh
+Files	文件	zh
+live (replug)	生效（重插）	zh
+Firmware upload	固件上传	zh
+Format:	格式：	zh
+Fuse OK	保险丝正常	zh
+Fuse open	保险丝熔断	zh
+GEN trace:	信号源轨迹：	zh
+Gain vs DC V / AC V, 8 s	V 增益对比，8 秒	zh
+Gestures	手势	zh
+Grid intensity:	网格亮度：	zh
+HOLD		keep
+Halves (stock)	对半（原厂）	zh
+Hardware	硬件	zh
+Help	帮助	zh
+Hold; run / stop	长按：运行/停止	zh
+Hz/Div		keep
+Inverted	反相	zh
+Key/alert volume	按键/告警音量	zh
+Keys	按键	zh
+LIVE		keep
+LIVE?		keep
+LOAD	负载	zh
+Leads open, nothing in A	表笔开路，A 孔无电流	zh
+Loading...	载入中...	zh
+Low battery! Please charge	电量低！请充电	zh
+Lower	下限	zh
+MANU	手动	zh
+MATH	运算	zh
+MCX		keep
+MENU	菜单	zh
+Manual	手动	zh
+Menu / back	菜单/返回	zh
+Mode	模式	zh
+Mode Remember	模式记忆	zh
+Mode:	模式：	zh
+Move that marker	移动该标记	zh
+NOTREACTIVE	非无功	zh
+Needs the P + PF method	需 P+PF 方法	zh
+Next >	下一页 >	zh
+No AC: DC is more precise	无 AC：DC 更准	zh
+No screenshots or logs	没有截图或记录	zh
+Noise	噪声	zh
+Normal	常规	zh
+OFF: V, P at the jacks	关：插孔有 V、P	zh
+OHM	电阻	zh
+OVERLOAD	过载	zh
+OVLD		keep
+On change	变化时	zh
+Other	其他	zh
+Overflow	溢出	zh
+PASS	通过	zh
+PAUSE	暂停	zh
+PC can edit	可编辑	zh
+PC can edit (replug)	可编辑（请重插）	zh
+POWER	功率	zh
+Persist:	保持时间：	zh
+Point	点	zh
+Polarity:	极性：	zh
+Power key twice	连按两次电源键	zh
+Power off	关机	zh
+Power off?	关机？	zh
+Press effect	按压效果	zh
+PriScr	截屏	zh
+Probe	探头	zh
+Protocol:	协议：	zh
+Pulse	脉冲	zh
+RANGE	量程	zh
+RUN	运行	zh
+Range / menu	量程/菜单	zh
+Read error	读取错误	zh
+Reading the disk	正在读磁盘	zh
+Reading the log	正在读记录	zh
+Record on / off	记录开/关	zh
+Recording	记录中	zh
+Reset energy?	清零电能？	zh
+Rising	上升	zh
+Roll:	滚动：	zh
+Runt	短脉冲	zh
+SHORT	短路	zh
+SIN	正弦	zh
+SOURCE	信号源	zh
+Save CSV	存CSV	zh
+Saved	已保存	zh
+Saving ...	保存中…	zh
+Saving a screenshot	正在存截图	zh
+Saving the CSV log	正在存 CSV	zh
+Scope	示波器	zh
+Scope: drag marker	示波器：拖动标记	zh
+Scope: drag up/down	示波器：上下拖动	zh
+Scope: side drag	示波器：侧边拖动	zh
+Screenshot	截图	zh
+Selected item	所选项目	zh
+Single	单次	zh
+Software	软件	zh
+Source:	来源：	zh
+Start page	起始页	zh
+Start recording	开始记录	zh
+Stop recording	停止记录	zh
+Stop the recording	停止记录	zh
+Swipe	滑动	zh
+Swipe down (DMM)	下滑（万用表）	zh
+Swipe down with 3 fingers to save a screenshot	三指下滑可保存截图	zh
+Swipe left / right	左右滑动	zh
+TEMP	温度	zh
+Takes about 12 s	约需 12 秒	zh
+Tap step	点按步进	zh
+Tap the value to type it	点按数值可输入	zh
+Tap: next page	点按：下一页	zh
+Temp	温度	zh
+Threshold:	阈值：	zh
+Touch lock	触摸锁定	zh
+Trigger position	触发位置	zh
+Triggered: recording 2 s ...	已触发：记录 2 秒…	zh
+Type:	类型：	zh
+USB host is writing	电脑正在写入	zh
+Unstable: unplug USB?	读数不稳：拔掉 USB？	zh
+Unsupported	不支持	zh
+Unsupported format	格式不支持	zh
+Upper	上限	zh
+V cal of this V range	本量程的 V 校准	zh
+V cal: V not steady	V 校准：V 不稳	zh
+V-JACK	V 插孔	zh
+V-JACK?	V 插孔？	zh
+VJACK		keep
+Vendor	厂商	zh
+Wh, VAh and the time	电能与时间	zh
+Width:	脉宽：	zh
+Zero	清零	zh
+Zero stored	零点已存	zh
+Zero the power meter	功率计清零	zh
+Zero: signal present	清零：有信号	zh
+auto	自动	zh
+logic level		keep
+# byte strings (b"...", the small-font rows): no CJK glyphs there, stays English
+Cold junction		keep
+Combined view:		keep
+Hold & Limits:		keep
+SIN		keep
+Sensor current ~		keep
+low	弱	zh
+max 10 MHz	最大 10 MHz	zh
+max 50 kHz	最大 50 kHz	zh
+n/a		keep
+no limit	无限制	zh
+shunt	分流	zh

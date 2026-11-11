@@ -125,7 +125,7 @@ def main():
     p.add_argument("--scale", type=int, default=2)
     p.add_argument("--splash", action="store_true", help="compose the boot splash")
     p.add_argument("--logo", help="splash_img.rs to include")
-    p.add_argument("--version", default="v0.4.1.01")
+    p.add_argument("--version", default="v0.4.1.02")
     p.add_argument("--out", required=True)
     a = p.parse_args()
 

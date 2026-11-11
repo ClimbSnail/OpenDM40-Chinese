@@ -1,6 +1,6 @@
 # patch/v041 —— v0.4.1 汉化流水线
 
-这套脚本把上游 **v0.4.1** 的英文源码变成 `firmware/DM40_v0.4.1.01.BIN`。
+这套脚本把上游 **v0.4.1** 的英文源码变成 `firmware/DM40_v0.4.1.02.BIN`。
 和 v0.3.0 时代的 `mkpatch*.py` 不同，这里**不是**几百个锚点补丁，而是
 "一份词典 + 一步替换"，因为 v0.4.0/zh9/zh10 的锚点补丁脚本当年没入库（放在作者本地
 `4-工具/`，已丢失），只能重建。
@@ -22,9 +22,10 @@ v0.4.1 源码 ── apply_dict.py ◀──────────────
         │
         ├─ splash_center.py → 开机画面整块垂直居中（TOP 84 → 132）
         ├─ dialog_font.py → 弹窗/提示条按内容选字面（中文走 TEXT22）
+        ├─ scope_zh.py → 示波器/菜单定点补译 + Ink::new 按内容选字面
         ├─ vendor_name.py → 设备信息页厂商行「正点原子 & 蜗牛」
         ├─ derive_sets.py → keep_cjk.txt / need_glyphs.txt（汉字 + 全角标点）
-        ├─ rebuild_fonts.py → stockfont_data.rs（16 px，353 字）
+        ├─ rebuild_fonts.py → stockfont_data.rs（16 px，376 字）
         └─ build_zh.sh → cargo build + dm40fw.py pack --pad
 ```
 
@@ -44,6 +45,7 @@ v0.4.1 源码 ── apply_dict.py ◀──────────────
 | `font_fix.py` | 把上一步查出的行改画到 `sf::TEXT22`，只动字体与两处 14 px 小格的尺寸 |
 | `splash_center.py` | 开机画面整块居中：`splash.rs` 的 `TOP` 84 → 132，配合同步下移的字标（`gen_splash_img2.py` 的 `Y = TOP - H - 19`），上下各留 66 px |
 | `dialog_font.py` | 弹窗/提示条（`dialog.rs`，以及图库的确认框）按内容选字面：ASCII 用原厂 26 px `ASCII26`，含中文就换 `TEXT22`。`ASCII26` 没有汉字，译文走它就是一整块空白 |
+| `scope_zh.py` | 示波器/菜单的定点补译（26 处锚点）：不能全局替换的短词与常量数组按 zh10 用词译出；显式中文绘制行换 `TEXT22`；`stockfont.rs::Ink::new` 按内容选字面，兜住 `option_list` / `spinner` / `side_popup` 这类把字体藏在辅助函数里的绘制 |
 | `vendor_name.py` | 把设备信息页的厂商行改成本项目的标记（`--value`，默认 `正点原子 & 蜗牛`）；整行匹配、命中必须为 1，换标记只要换 `--value` 重跑。这不是翻译，所以不进 `zh_dict.csv` |
 | `preview_text.py` | 离线渲染：解码生成的 `stockfont_data.rs`（BIT1），按固件的排版算术画成 PNG，用真实字库量宽度、拼开机整帧 |
 | `build_fix_windows.py` | Windows 构建修复：`stackdepth.py` 找 `llvm-objdump` 缺 `.exe`；`build.sh` 的 `rm -f` 在本机被安全删除钩子拦下，改成截断 + `-s` 判断 |
@@ -60,6 +62,11 @@ v0.4.1 源码 ── apply_dict.py ◀──────────────
 
 `status` 列的含义：`harvest`（v0.3.0 沿用的译文）、`manual`（本次人工译）、
 `manual-new`（v0.4.1 新增文案）、`keep`（保留英文）。
+
+示波器/菜单另有一批短词由 `scope_zh.py` 定点补译（`On`、`Band`、`Hz/Div`、
+颜色名、20 个测量项缩写、`Power` 页签等）：同一个英文串同时被 SCPI / 日志 /
+文件 token 复用，全局替换会误伤，所以不进词典。词典里这几行仍是 `keep`
+（`apply_dict.py` 跳过），界面文案由脚本按唯一锚点给出。
 
 ## 镜像对齐（为什么最后靠人工）
 
@@ -81,7 +88,7 @@ v0.4.1 源码 ── apply_dict.py ◀──────────────
 - 汉字统一 **16 px**（v0.4.0-zh 的结论：22 px 装不下，17.8 KB → 11.8 KB）。
 - 字形格 **16×16**（`--txt22-adv 16`）：22 px 宽的格子里塞 16 px 字，每字白扔 6 列空白。
 - 只保留 ASCII 等原厂字形（不裁 Latin，v0.4.0 的教训：裁掉的字会显示成方框）。
-- 353 个字形（345 汉字 + `：，？！（）…、` 8 个全角标点）≈ 13.9 KB，B 区余量 4,224 字节。
+- 376 个字形（368 汉字 + `：，？！（）…、` 8 个全角标点）≈ 13.4 KB（TEXT22 blob 13,435 字节），B 区余量 3,056 字节、下限 2.5 KiB。
 
 ## 待办（本版没做）
 

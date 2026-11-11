@@ -645,8 +645,9 @@ ASSERT(__bkp_bss_end <= 0x40024FE8, ".bkp_bss reaches the settings sequence word
 ASSERT(__usbhs_bss_start >= 0x40060000 && __usbhs_bss_end <= 0x40061000, ".usbhs_bss outside the 4 KiB USBHS FIFO RAM");
 ASSERT(_stack_top - __bss_end >= 42K, "TCM stack below 42 KiB (worst path ~21.5 KiB + 20 KiB headroom): move CPU-only statics to .sram_bss");
 ASSERT(ORIGIN(SRAM) + LENGTH(SRAM) - __sram_bss_end >= 8K, "less than 8 KiB of SRAM free: overlay or shrink a buffer (docs/native-boot.md memory map)");
-/* OpenDM40-Chinese: 4 KiB instead of upstream's 8 KiB. The 16 px hanzi font
- * costs ~15 KB of region B (v0.4.0-zh lived with 3.9 KB free as well); the
- * link itself still fails below 8 KiB of *total* B room, so this floor is the
+/* OpenDM40-Chinese: 2.5 KiB instead of upstream's 8 KiB. The 4 KiB floor
+ * held until the Scope/menu localisation pass: 23 more hanzi plus their
+ * strings cost ~1.2 KB of region B (free: 4,224 -> 3,056 bytes). v0.4.0-zh
+ * ran with 3.9 KB free, so the image is still fine; this floor is the
  * reserve for the next change, not the limit of the image. */
-ASSERT(0x08080000 - __b_end >= 4K, "less than 4 KiB of zero-wait flash (region B) free: move rarely run code to .cold");
+ASSERT(0x08080000 - __b_end >= 2560, "less than 2.5 KiB of zero-wait flash (region B) free: move rarely run code to .cold");

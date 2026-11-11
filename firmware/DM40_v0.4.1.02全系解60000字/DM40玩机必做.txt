@@ -4,11 +4,11 @@
 通过数据线连接电脑，会有一个万用表的U盘，把里面东西全部拷贝一份打个包，存着。（这里面是设备独有的信息）
 
 
-固件：DM40_v26.BIN（正点原子原版固件）、DM40_v0.4.1.01.BIN（第三方增强固件）
+固件：DM40_v26.BIN（正点原子原版固件）、DM40_v0.4.1.xx.BIN（蜗牛版增强固件）
 刷机步骤：开机后进入设置，打开U盘。随后电脑会出现一个万用表的U盘，把目标固件拷贝一份到U盘根目录，然后电脑操作“弹出设备”。万用表屏幕确认升级固件。
 关于刷机顾虑：刷机前后的DM40校准数据不会变化，后续使用同方法也可以刷回原厂固件。
 
 关于第三方固件：
-此固件为开源项目：https://github.com/opendm40/opendm40
-汉化方案也为开源：https://github.com/xingyan4117-sketch/OpenDM40-Chinese
-本固件是基于汉化方案对最新opendm40 v0.4.1的汉化（OpenDM40-Chinese当前只汉化v0.4.0）。
+此固件为开源项目（很优秀）：https://github.com/opendm40/opendm40
+汉化方案也为开源（很棒）：https://github.com/xingyan4117-sketch/OpenDM40-Chinese
+蜗牛版增强固件是基于汉化方案对最新opendm40 v0.4.1的汉化（OpenDM40-Chinese当前只汉化v0.4.0）。

@@ -1,9 +1,9 @@
 # OpenDM40-Chinese
 
 [opendm40](https://github.com/opendm40/opendm40) 开源万用表固件的**简体中文汉化**，
-面向正点原子 **DM40A / DM40B / DM40C**，基于 **v0.4.1** 源码，版本号 **v0.4.1.01**。
+面向正点原子 **DM40A / DM40B / DM40C**，基于 **v0.4.1** 源码，版本号 **v0.4.1.02**。
 
-v0.4.0-zh10 版曾在 **DM40A 真机**上测试通过；**v0.4.1.01 尚未上真机**（见「已知问题」）。
+v0.4.0-zh10 版曾在 **DM40A 真机**上测试通过；**v0.4.1.02 尚未上真机**（见「已知问题」）。
 
 > opendm40 官方只有英文界面。本项目把主菜单、设置页、量程页等改为中文，
 > 并提供一份完整的中文使用说明书。
@@ -38,12 +38,12 @@ v0.4.0-zh10 版曾在 **DM40A 真机**上测试通过；**v0.4.1.01 尚未上真
 
 ## 要刷的文件
 
-> **直接下载（推荐）**：[Releases · v0.4.1.01](
+> **直接下载（推荐）**：[Releases · v0.4.1.02](
 > https://github.com/xingyan4117-sketch/OpenDM40-Chinese/releases/latest)
-> —— 附件里就是 `DM40_v0.4.1.01.BIN` 和 `SHA256SUMS.txt`
+> —— 附件里就是 `DM40_v0.4.1.02.BIN` 和 `SHA256SUMS.txt`
 
-**`firmware/DM40_v0.4.1.01.BIN`** —— 634624 字节，
-CRC-32 `76abcf09`，SHA-256 `75ab66…2d05`
+**`firmware/DM40_v0.4.1.02.BIN`** —— 634624 字节，
+CRC-32 `c4c064db`，SHA-256 `dc3b3af3…5f2e`
 
 校验：`sha256sum -c SHA256SUMS.txt`（Windows 用 `Get-FileHash` 逐个比对），
 完整清单见仓库根的 `SHA256SUMS.txt`。
@@ -64,7 +64,8 @@ CRC-32 `76abcf09`，SHA-256 `75ab66…2d05`
 | zh8 | `6803c2d3` | v0.3.0 汉化最终版 |
 | zh9 | `12200498` | 移植到上游 v0.4.0（四通道示波器、协议解码器）|
 | zh10 | `fd8d01b6` | v0.4.0 汉化最终版：示波器五页全汉化、弹窗满宽、触发页两行布局 |
-| **v0.4.1.01** | `76abcf09` | **当前版本**：移植到上游 v0.4.1，版本串 0.4.1.01，开机 Snail 字标居中，19 处错字体已修，弹窗/提示条中文改画 TEXT22，设备信息页厂商行为「正点原子 & 蜗牛」 |
+| v0.4.1.01 | `c2620c3e` | 移植到上游 v0.4.1，开机 Snail 字标居中，19 处错字体已修，示波器/菜单中文补齐（测量项、探头/耦合、滚动/保持时间等），设备信息页厂商行为「正点原子 & 蜗牛」；未发 tag 的重建版，仅存档 |
+| **v0.4.1.02** | `c4c064db` | **当前版本**：内容同上一行，仅把版本串改为 `0.4.1.02` 后单独发版 |
 
 > 从 zh3 起，**发布过的附件不再覆盖**；有新改动就发新 tag。
 
@@ -107,11 +108,11 @@ CRC-32 `76abcf09`，SHA-256 `75ab66…2d05`
 | ![限值页](screenshots/限值页.png) | ![信号源](screenshots/信号源.png) |
 
 > 汉化范围：主菜单、设置、万用表各页、图库、限值页、设备信息、帮助页，
-> 以及**示波器整套界面**（五个标签页、20 个测量项、四个通道色块、三个弹窗）。
+> 以及**示波器整套界面**（五个标签页、20 个测量项、三个弹窗的全部标签与选项值）。
 >
-> 仍保留英文的只有三类：**行业通用符号**（DC/AC、UART/8N1、FFT、dB/div）、
-> **SCPI 关键字**（上位机通信需要），以及**12 px 小字区域**
-> （图库文件数、功率设置脚注、示波器底部测量行——这些字体没有汉字字形）。
+> 仍保留英文的只有三类：**行业通用符号**（DC/AC、UART/8N1、FFT、dB/div、
+> 右侧四个通道色块标题 `CH1 / DMM / GEN / FFT`）、**SCPI 关键字**（上位机通信需要），
+> 以及**12 px 小字区域**（图库文件数、功率设置脚注、示波器底部测量行——这些字体没有汉字字形）。
 
 ---
 
@@ -135,10 +136,13 @@ CRC-32 `76abcf09`，SHA-256 `75ab66…2d05`
   清除限值 / 失败蜂鸣 / 记录，标题 `保持限值: DC V`，值 开 / 关
 - **记录页**：间隔 / 时长 / 可用 / 每次 / 1分 / 手停 / 1小时 …
 - **信号源**：频率 / 偏移 / 波形名 **正弦 / 方波 / 三角 / 上升**
-- **示波器页签**：测量 / 显示 / 触发 / 设置，以及各页内容——
-  测量页 清除 / 默认；显示页 滚动 开/关、余辉 关/最小/1s/无限、亮度、网格；
-  触发页 边沿 上升/下降、模式 自动/常规/单次、类型 边沿/脉冲/窄脉冲；
-  设置页 截屏 / 存CSV；通道弹窗 耦合 / 探头 / 颜色
+- **示波器页签**：测量 / 显示 / 触发 / 设置 / 解码，以及各页内容——
+  测量页 20 个测量项（频率 / 占空+ / 峰峰 / 周期 / 有效 …）、清除 / 默认；
+  显示页 滚动 开/关、保持时间 关/最小/1秒/无限、亮度 / 网格亮度、信号源轨迹 / CH2（电表）；
+  触发页 边沿 上升/下降、模式 自动/常规/单次、类型 边沿/脉冲/短脉冲、来源 通道/信源；
+  解码页 协议 / 模式 / 格式 / 极性 / 波特率 / 阈值、带状 / 日志；
+  设置页 截屏 / 存CSV；通道弹窗 耦合 / 探头 / 颜色 / 倍率 / 颜色名；
+  运算弹窗 模式 / 颜色 / Hz/格 / 其他 / 窗函数 / FFT 单位；时间基准弹窗 时间/格
 - **涌流页**：准备中… / 就绪 N A / 已触发：记录 2 秒… / 就绪 / 取消 / 保存中…，
   以及三条冲突提示
 - **各页标题与返回键**：设置 / 量程 / 键盘 / 设备 / 记录 / 图库 / 帮助 /
@@ -185,16 +189,17 @@ CRC-32 `76abcf09`，SHA-256 `75ab66…2d05`
 
 ### 刷哪一个文件？
 
-> ## 就刷：`firmware/DM40_v0.4.1.01.BIN`
-> **634624 字节**，CRC-32 `76abcf09`，SHA-256 开头 `75ab665a`
+> ## 就刷：`firmware/DM40_v0.4.1.02.BIN`
+> **634624 字节**，CRC-32 `c4c064db`，SHA-256 开头 `dc3b3af3`
 
-仓库里一共 6 个镜像，**其余几个都不要刷**：
+`firmware/` 里的文件如下，**只有第一个能刷**：
 
 | 文件 | 是什么 | 刷吗 |
 |---|---|---|
-| **`firmware/DM40_v0.4.1.01.BIN`** | **汉化版（本项目的成品）** | ✅ **刷这个** |
+| **`firmware/DM40_v0.4.1.02.BIN`** | **汉化版（本项目的成品）** | ✅ **刷这个** |
+| `firmware/DM40_v0.4.1.01.BIN` | 上一版（补齐中文后的重建版，仅存档） | ❌ 只有想回退上一版才用 |
 | `firmware/opendm40-v0.4.1-official.bin` | 上游 opendm40 v0.4.1 原版，**英文界面** | ❌ 只有想回退英文版 / 先确认上游本身正常时才用 |
-| `firmware/opendm40-v0.4.0-zh.bin` | 上一版汉化（zh10） | ❌ 只有想回退上一版才用 |
+| `firmware/opendm40-v0.4.0-zh.bin` | 更旧的汉化（zh10） | ❌ 只有想回退到 zh10 才用 |
 | `firmware/dm40_v_2_6-stock.bin` | **原厂 V2.6** 固件备份 | ❌ 只有想刷回出厂才用 |
 | `firmware/link-native.x` | 链接脚本，不是固件 | ❌ 不能刷 |
 
@@ -232,12 +237,12 @@ Update-HostStorageCache
 ### 步骤
 
 1. **USB 线连电脑**，表会挂成一个 U 盘（卷标 `DM40`，约 2 GB）
-2. **把 `firmware/DM40_v0.4.1.01.BIN` 复制到 U 盘根目录**，
+2. **把 `firmware/DM40_v0.4.1.02.BIN` 复制到 U 盘根目录**，
    它本来就叫 `DM40*.BIN`，**直接拷、不用改名**（叫 `firmware.bin` 就不会被识别）
 3. **安全弹出 / 卸载该卷**（让电脑把缓存写完）
    ```powershell
    # 假设表是 E: 盘
-   Copy-Item firmware\DM40_v0.4.1.01.BIN E:\DM40_v0.4.1.01.BIN
+   Copy-Item firmware\DM40_v0.4.1.02.BIN E:\DM40_v0.4.1.02.BIN
    Write-VolumeCache -DriveLetter E
    mountvol E: /P
    ```
@@ -286,7 +291,7 @@ pip install pyvisa pyvisa-py pyusb libusb-package
 ### 3. 刷入
 
 ```bash
-python tools/upload_zh.py firmware/DM40_v0.4.1.01.BIN --update --wait 120
+python tools/upload_zh.py firmware/DM40_v0.4.1.02.BIN --update --wait 120
 ```
 
 它会：
@@ -336,7 +341,7 @@ python tools/upload_zh.py firmware/dm40_v_2_6-stock.bin --update --wait 120
 
 ---
 
-## 从源码重建（v0.4.1.01）
+## 从源码重建（v0.4.1.02）
 
 需要 Rust 工具链（`thumbv7em-none-eabihf` + `llvm-tools` + `rust-src`）、git-bash、Python 3（含 Pillow）。
 Windows 上的坑（`RUSTUP_HOME` 用 Windows 路径、`PATH` 用 MSYS 路径、
@@ -359,9 +364,14 @@ python3 patch/v041/dialog_font.py --src build/worktree/firmware/src
 # 2d. 设备信息页厂商行加上项目标记（不是翻译，所以不放进词典；--value 可改）
 python3 patch/v041/vendor_name.py --src build/worktree/firmware/src
 
-# 3. 重新推导字表并生成 16 px 字库
+# 2e. 示波器/菜单定点补译：通用短词不能进全局词典，字体也在这一步兜底
+python3 patch/v041/scope_zh.py --src build/worktree/firmware/src
+
+# 3. 重新推导字表并生成 16 px 字库（顺序不能反：新译文要用到的汉字得先出现）
+#    --cjk-src 供 keep_cjk.txt 取原厂字形；本版 keep 为空，传同一份 pristine 即可
 python3 patch/derive_sets.py <vendor-cjk-set> build/worktree/firmware/src/*.rs
 python3 patch/rebuild_fonts.py --pristine <v0.4.1 原始 stockfont_data.rs> \
+        --cjk-src <v0.4.1 原始 stockfont_data.rs> \
         --out build/worktree/firmware/src/stockfont_data.rs \
         --txt22-keep patch/keep_cjk.txt --txt22-draw patch/need_glyphs.txt \
         --txt22-size 16 --txt22-adv 16
@@ -371,9 +381,9 @@ python3 patch/gen_splash_img2.py --text Snail --size 58
 python3 patch/v041/splash_logo.py --src build/worktree/firmware/src --img patch/splash_img.rs
 python3 patch/v041/splash_center.py --src build/worktree/firmware/src   # 整块垂直居中（TOP = 132）
 
-# 5. 构建（DM40_VERSION_SUFFIX 让版本串变成 0.4.1.01）
-#    产物直接叫 build/out/DM40_v0.4.1.01.BIN（U 盘要的 DM40*.BIN），不用改名
-DM40_VERSION_SUFFIX=.01 ./patch/v041/build_zh.sh
+# 5. 构建（DM40_VERSION_SUFFIX 让版本串变成 0.4.1.02）
+#    产物直接叫 build/out/DM40_v0.4.1.02.BIN（U 盘要的 DM40*.BIN），不用改名
+DM40_VERSION_SUFFIX=.02 ./patch/v041/build_zh.sh
 ```
 
 `patch/v041/README.md` 说明了这套流水线每一步在做什么；
@@ -382,14 +392,15 @@ DM40_VERSION_SUFFIX=.01 ./patch/v041/build_zh.sh
 
 ### 闪存余量（很紧）
 
-| 区域 | 剩余（v0.4.1.01 实测） | 硬性下限 |
+| 区域 | 剩余（2026-11-11 实测） | 硬性下限 |
 |---|---|---|
 | A2 | 1,524 字节 | — |
-| B（零等待） | **4,224 字节** | 4,096（本项目把它从上游的 8,192 降下来了） |
+| B（零等待） | **3,056 字节** | 2,560（本项目把它从上游的 8,192 降下来了） |
 | C | 4,384 字节 | 4,096 |
 
 一个 16 px 汉字在 B 区约占 40 字节（位图 16×墨迹高 + 8 字节条目）；全角标点墨迹小，约 25 字节。
-353 个字（含 `：，？！（）…、`）合计约 13.9 KB——上游 v0.4.1 的 B 区余量比 v0.4.0 多，够用但仍不宽裕。
+376 个字（含 `：，？！（）…、`）合计约 13.4 KB——本轮补齐示波器/菜单中文新增 23 字，
+B 区余量从 4,224 降到 3,056，下限随之调到 2.5 KiB（仍留 496 字节 reserve）。
 想再加中文先看余量，`patch/v041/README.md` 记了可以往 C 区挪的几处。
 
 ---

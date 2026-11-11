@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Flag Chinese strings drawn with a font that has no hanzi.
 
-Only TEXT22 carries the 343 hanzi glyphs this project adds; every other font
+Only TEXT22 carries the hanzi glyphs this project adds; every other font
 (ASCII26, SC_F16, F14, F78, ...) is the stock table and has no CJK at all, so
 a Chinese literal drawn with one of them comes out blank (or as boxes) on the
 panel -- and nothing in the build complains, because it is still valid UTF-8.

@@ -2,9 +2,9 @@
 # Rebuild the Chinese v0.4.1 firmware from a clean upstream checkout.
 #
 #   ./patch/v041/build_zh.sh                       # -> build/out/DM40_v0.4.1.BIN
-#   DM40_VERSION_SUFFIX=.01 ./patch/v041/build_zh.sh
-#                                                  # -> build/out/DM40_v0.4.1.01.BIN
-#                                                  #    (version string 0.4.1.01)
+#   DM40_VERSION_SUFFIX=.02 ./patch/v041/build_zh.sh
+#                                                  # -> build/out/DM40_v0.4.1.02.BIN
+#                                                  #    (version string 0.4.1.02)
 #
 # The image is named the way the meter wants it on its USB volume
 # (`DM40*.BIN`), so the build artifact can be copied over without renaming.
